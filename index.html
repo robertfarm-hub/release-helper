@@ -70,10 +70,10 @@
           vientiasetuksista ennen renderöintiä.</p>
         <ul class="ohjeet">
           <li><strong>Master</strong></li>
-          <li><strong>TikTok-klippi</strong>, enintään 29 s. Julkaistaan TikTokissa viikko ennen julkaisua. Kappaleen
-            maistiainen; yleensä kertosäe.</li>
-          <li><strong>Minuutin klippi</strong>. Julkaistaan kappaleen yhteydessä. Valitse
-            kohta, joka on kappaleen kohokohta tai jossa sen ajatus tiivistyy parhaiten.</li>
+          <li><strong>TikTok-klippi</strong>, enintään 29 s. Julkaistaan TikTokissa viikko ennen julkaisua. Maistiainen
+            kappaleesta, yleensä kertosäe.</li>
+          <li><strong>Minuutin klippi</strong>. Julkaistaan kappaleen yhteydessä. Valitse kohta, joka on kappaleen
+            kohokohta tai jossa sen ajatus tiivistyy parhaiten.</li>
         </ul>
         <ul class="tehtavat">
           <li>
@@ -92,7 +92,6 @@
             <input type="checkbox" id="vaihe-1-minuutti">
             <label for="vaihe-1-minuutti">Minuutin klippi on kansiossa</label>
           </li>
-
         </ul>
       </fieldset>
 
@@ -110,13 +109,12 @@
             <input type="checkbox" id="vaihe-1-kansi">
             <label for="vaihe-1-kansi">Kansikuva on kansiossa</label>
           </li>
-
         </ul>
       </fieldset>
 
       <fieldset>
         <legend>Kansion jakaminen</legend>
-        <p class="ohje">Tarkista jakoasetukset tietokoneen selaimessa Google Drivessa:</p>
+        <p class="ohje">Jaa kansio tietokoneen selaimessa Google Drivessa:</p>
         <ol class="ohjeet">
           <li>Klikkaa kansiota hiiren oikealla → <strong>Jaa</strong> → <strong>Jaa</strong></li>
           <li>Kohdassa <strong>Yleinen käyttöoikeus</strong> vaihda <strong>Rajoitettu</strong> → <strong>Kuka tahansa,
@@ -125,6 +123,7 @@
         </ol>
         <p class="huomio">Englanninkielisessä Drivessa: Share → General access → Anyone with the link → Copy link →
           Done.</p>
+        <p class="huomio">Liitä linkki <a href="#vaihe-2">vaiheen 2</a> lomakkeeseen.</p>
         <ul class="tehtavat">
           <li>
             <input type="checkbox" id="vaihe-1-tarkistus">
@@ -135,69 +134,141 @@
             <label for="vaihe-1-jako">Linkki on kopioitu talteen</label>
           </li>
         </ul>
-            <p>Linkki liitetään viestiin, jossa kaikki kootaan yhteyshenkilölle (katso kohta 2)</p>
       </fieldset>
     </section>
 
     <section class="kortti" id="vaihe-2" aria-labelledby="vaihe-2-otsikko">
       <header class="kortti-ylaosa">
-        <h2 id="vaihe-2-otsikko">2. Lähetä viesti yhteyshenkilöllesi</h2>
+        <h2 id="vaihe-2-otsikko">2. Kokoa ja lähetä viesti</h2>
         <input type="checkbox" id="vaihe-2-kaikki" class="kuittaa-kaikki">
         <label for="vaihe-2-kaikki">Kaikki tehty</label>
       </header>
 
-      <p>Lähetä viesti vähintään 3 viikkoa ennen toivottua julkaisua. Levy-yhtiö päättää julkaisupäivän, mutta voit halutessasi esittää toiveita.</p>
+      <p>Täytä kentät, niin sivu kokoaa niistä valmiin viestin. Kopioi viesti ja lähetä se yhteyshenkilöllesi vähintään
+        3 viikkoa ennen toivottua julkaisua. Levy-yhtiö päättää julkaisupäivän, mutta voit kertoa toiveesi.</p>
+      <p class="huomio">Tiedot tallentuvat vain tähän selaimeen. Niitä ei lähetetä minnekään.</p>
 
-      <fieldset>
-        <legend>Kappaleen tiedot</legend>
-        <p class="ohje">Kirjoita viestiin:</p>
-        <ul class="ohjeet">
-          <li><strong>Artisti</strong> ja <strong>kappaleen nimi</strong> tarkalleen siinä muodossa, jossa ne näkyvät
-            julkaisussa</li>
-          <li><strong>Äänityspaikka</strong> ja <strong>äänittäjä</strong></li>
-          <li><strong>Tekijät:</strong> sävellys (biitin tekijä), sanoitus, miksaus ja masterointi</li>
-        </ul>
-        <ul class="tehtavat">
-          <li>
-            <input type="checkbox" id="vaihe-2-perustiedot">
-            <label for="vaihe-2-perustiedot">Artisti, kappaleen nimi ja äänityspaikka ovat viestissä</label>
-          </li>
-          <li>
-            <input type="checkbox" id="vaihe-2-tekijat">
-            <label for="vaihe-2-tekijat">Tekijät ovat viestissä</label>
-          </li>
-        </ul>
-      </fieldset>
+      <form class="viestilomake">
 
-      <fieldset>
-        <legend>Pitch-teksti</legend>
-        <p class="ohje">Kirjoita englanniksi, noin 500 merkkiä. Teksti menee Spotifyn editoreille Ruotsiin. Kerro, miltä
-          kappale kuulostaa, mistä se kertoo ja millaiseen tunnelmaan se sopii.</p>
-        <ul class="tehtavat">
-          <li>
-            <input type="checkbox" id="vaihe-2-pitch">
-            <label for="vaihe-2-pitch">Pitch-teksti on viestissä</label>
-          </li>
-        </ul>
-      </fieldset>
+        <fieldset>
+          <legend>Kappale</legend>
+          <div class="kentta">
+            <label for="viesti-artisti">Artisti</label>
+            <input type="text" id="viesti-artisti" required aria-describedby="ohje-artisti">
+            <p class="ohje" id="ohje-artisti">Tarkalleen siinä muodossa, jossa nimi näkyy julkaisussa, myös
+              featuring-artistit.</p>
+          </div>
+          <div class="kentta">
+            <label for="viesti-kappale">Kappaleen nimi</label>
+            <input type="text" id="viesti-kappale" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Äänitys</legend>
+          <div class="kentta">
+            <label for="viesti-paikka">Äänityspaikka</label>
+            <input type="text" id="viesti-paikka" required>
+          </div>
+          <div class="kentta">
+            <label for="viesti-aanittaja">Äänittäjä</label>
+            <input type="text" id="viesti-aanittaja" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tekijät</legend>
+          <div class="kentta">
+            <label for="viesti-savellys">Sävellys</label>
+            <input type="text" id="viesti-savellys" required aria-describedby="ohje-savellys">
+            <p class="ohje" id="ohje-savellys">Biitin tekijä ja mahdollinen melodian tekijä.</p>
+          </div>
+          <div class="kentta">
+            <label for="viesti-sanoitus">Sanoitus</label>
+            <input type="text" id="viesti-sanoitus" required>
+          </div>
+          <div class="kentta">
+            <label for="viesti-miksaus">Miksaus</label>
+            <input type="text" id="viesti-miksaus" required>
+          </div>
+          <div class="kentta">
+            <label for="viesti-masterointi">Masterointi</label>
+            <input type="text" id="viesti-masterointi" required>
+          </div>
+          <div class="kentta">
+            <label for="viesti-esiintyjat">Muut esiintyjät (valinnainen)</label>
+            <input type="text" id="viesti-esiintyjat" aria-describedby="ohje-esiintyjat">
+            <p class="ohje" id="ohje-esiintyjat">Esimerkiksi taustalaulu ja soittajat.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pitch-teksti</legend>
+          <p class="ohje" id="ohje-pitch">Englanniksi, enintään 500 merkkiä. Teksti menee Spotifyn editoreille Ruotsiin,
+            ja samaa tekstiä käytetään <a href="#vaihe-3">vaiheessa 3</a>. Kerro, miltä kappale kuulostaa, mistä se
+            kertoo ja millaiseen tunnelmaan se sopii.</p>
+          <p class="ohje">Jos englanti ei suju, kirjoita teksti suomeksi ja käännä se esimerkiksi tekoälyllä. Lue
+            käännös vielä itse läpi ja varmista, että se kuvaa kappalettasi oikein.</p>
+          <figure class="esimerkki">
+            <figcaption>Esimerkki. Älä kopioi, kirjoita omasi.</figcaption>
+            <blockquote lang="en">
+              <p>A late-night Finnish rap track about leaving your hometown and the people who stay behind. Warm, dusty
+                piano samples meet a slow boom-bap beat, while the hook turns into a half-sung melody. The song captures
+                the bittersweet feeling of moving on without forgetting where you come from. For fans of JVG and
+                Elastinen, and for anyone driving home alone after midnight.</p>
+            </blockquote>
+          </figure>
+          <div class="kentta">
+            <label for="viesti-pitch">Pitch-teksti</label>
+            <textarea id="viesti-pitch" rows="6" maxlength="500" required aria-describedby="ohje-pitch"
+              lang="en"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Materiaali ja toiveet</legend>
+          <div class="kentta">
+            <label for="viesti-linkki">Drive-linkki</label>
+            <input type="url" id="viesti-linkki" required aria-describedby="ohje-linkki">
+            <p class="ohje" id="ohje-linkki">Liitä vaiheessa 1 kopioimasi linkki.</p>
+          </div>
+          <div class="kentta">
+            <label for="viesti-toive">Toive julkaisupäivästä (valinnainen)</label>
+            <input type="text" id="viesti-toive">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Valmis viesti</legend>
+          <div class="kentta">
+            <label for="valmis-viesti">Viesti yhteyshenkilölle</label>
+            <textarea id="valmis-viesti" rows="16" readonly></textarea>
+          </div>
+          <button type="button" class="kopioi-viesti">Kopioi viesti</button>
+          <p class="kopiointi-tila" role="status"></p>
+        </fieldset>
+
+      </form>
 
       <fieldset>
         <legend>Lähetys</legend>
-        <p class="ohje">Lisää viestin loppuun vaiheessa 1 kopioimasi Drive-linkki.</p>
         <ul class="tehtavat">
           <li>
-            <input type="checkbox" id="vaihe-2-linkki">
-            <label for="vaihe-2-linkki">Drive-linkki on viestissä</label>
+            <input type="checkbox" id="vaihe-2-kopioitu">
+            <label for="vaihe-2-kopioitu">Viesti on kopioitu</label>
           </li>
           <li>
             <input type="checkbox" id="vaihe-2-lahetetty">
-            <label for="vaihe-2-lahetetty">Viesti on lähetetty</label>
+            <label for="vaihe-2-lahetetty">Viesti on lähetetty yhteyshenkilölle</label>
           </li>
         </ul>
       </fieldset>
     </section>
 
     <!-- OSAT 5–7: kortit 3–5 tulevat tähän -->
+  </main>
+
+  <!-- OSAT 5–7: kortit 3–5 tulevat tähän -->
   </main>
 
   <!-- OSA 8: footer tulee tähän -->
