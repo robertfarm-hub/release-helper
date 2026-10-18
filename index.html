@@ -126,7 +126,7 @@
         </ol>
         <p class="huomio">Englanninkielisessä Drivessa: Share → General access → Anyone with the link → Copy link →
           Done.</p>
-        <p class="huomio">Liitä linkki <a href="#vaihe-2">vaiheen 2</a> lomakkeeseen.</p>
+        <p class="huomio">Linkki liitetään <a href="#vaihe-2">vaiheen 2</a> lomakkeeseen.</p>
         <ul class="tehtavat">
           <li>
             <input type="checkbox" id="vaihe-1-tarkistus">
@@ -152,6 +152,14 @@
       <p class="huomio">Tiedot tallentuvat vain tähän selaimeen. Niitä ei lähetetä minnekään.</p>
 
       <form class="viestilomake">
+        <fieldset>
+          <legend>Materiaali</legend>
+          <div class="kentta">
+            <label for="viesti-linkki">Drive-linkki</label>
+            <input type="url" id="viesti-linkki" required aria-describedby="ohje-linkki">
+            <p class="ohje" id="ohje-linkki">Liitä vaiheessa 1 kopioimasi linkki.</p>
+          </div>
+        </fieldset>
 
         <fieldset>
           <legend>Kappale</legend>
@@ -199,11 +207,12 @@
             <input type="text" id="viesti-masterointi" required>
           </div>
           <div class="kentta">
-            <label for="viesti-esiintyjat">Muut esiintyjät (valinnainen)</label>
+            <label for="viesti-esiintyjat">Muut esiintyjät tai osallistujat (valinnainen)</label>
             <input type="text" id="viesti-esiintyjat" aria-describedby="ohje-esiintyjat">
-            <p class="ohje" id="ohje-esiintyjat">Esimerkiksi taustalaulu ja soittajat.</p>
+            <p class="ohje" id="ohje-esiintyjat">Esimerkiksi taustalaulu, soittajat tai sovittaja.</p>
           </div>
         </fieldset>
+
 
         <fieldset>
           <legend>Pitch-teksti</legend>
@@ -229,12 +238,7 @@
         </fieldset>
 
         <fieldset>
-          <legend>Materiaali ja toiveet</legend>
-          <div class="kentta">
-            <label for="viesti-linkki">Drive-linkki</label>
-            <input type="url" id="viesti-linkki" required aria-describedby="ohje-linkki">
-            <p class="ohje" id="ohje-linkki">Liitä vaiheessa 1 kopioimasi linkki.</p>
-          </div>
+          <legend>Muuta</legend>
           <div class="kentta">
             <label for="viesti-toive">Toive julkaisupäivästä (valinnainen)</label>
             <input type="text" id="viesti-toive">
