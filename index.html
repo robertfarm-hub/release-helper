@@ -50,7 +50,73 @@
   </nav>
 
   <main>
-    <!-- OSAT 3–7: kortit tulevat tähän -->
+    <section class="kortti" id="vaihe-1" aria-labelledby="vaihe-1-otsikko">
+      <header class="kortti-ylaosa">
+        <h2 id="vaihe-1-otsikko">1. Kokoa materiaalit</h2>
+        <input type="checkbox" id="vaihe-1-kaikki" class="kuittaa-kaikki">
+        <label for="vaihe-1-kaikki">Kaikki tehty</label>
+      </header>
+
+      <p>Tee uusi kansio <a href="https://drive.google.com/drive/home">Google Driveen</a>, ja lisää sinne kaikki julkaisumateriaalit:</p>
+
+      <fieldset>
+        <legend>Äänitiedostot – kaikki WAV, 44,1 kHz / 16-bit</legend>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-1-master">
+            <label for="vaihe-1-master">Master</label>
+          </li>
+          <li>
+            <input type="checkbox" id="vaihe-1-tiktok">
+            <label for="vaihe-1-tiktok">TikTok-klippi, enintään 29 s</label>
+          </li>
+          <li>
+            <input type="checkbox" id="vaihe-1-minuutti">
+            <label for="vaihe-1-minuutti">Minuutin klippi (julkaistaan kappaleen yhteydessä)</label>
+          </li>
+        </ul>
+        <p>Valitse TikTokkiin sellaiset kohdat kappaleesta, jotka mielestäsi ovat sen kohokohtia, tai missä sen koko ajatus parhaiten tiivistyy.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kansikuva</legend>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-1-kansi">
+            <label for="vaihe-1-kansi">3000 × 3000 px, JPG tai PNG</label>
+          </li>
+        </ul>
+        <p>Hyvä ilmainen sivusto kuvanmuokkaukseen: <a href="https://www.photopea.com/">Photopea.com</a></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kansion jakaminen</legend>
+        <p>Tarkista jakoasetukset tietokoneen selaimessa Google Drivessa:</p>
+        <ol class="ohjeet">
+          <li>Klikkaa kansiota hiiren oikealla → <strong>Jaa</strong> → <strong>Jaa</strong></li>
+          <li>Kohdassa <strong>Yleinen käyttöoikeus</strong> vaihda <strong>Rajoitettu</strong> → <strong>Kuka tahansa, jolla on linkki</strong></li>
+          <li>Paina <strong>Kopioi linkki</strong> ja sitten <strong>Valmis</strong></li>
+        </ol>
+        <p class="huomio">Englanninkielisessä Drivessa: Share → General access → Anyone with the link → Copy link → Done.</p>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-1-jako">
+            <label for="vaihe-1-jako">Kansio on jaettu linkillä ja linkki on kopioitu</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Teosto</legend>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-1-teosto">
+            <label for="vaihe-1-teosto">Teosilmoitus tehty, jos olet Teoston asiakas</label>
+          </li>
+        </ul>
+        <p class="huomio">Lisää <a href="#vaihe-4">vaiheessa 4</a>.</p>
+      </fieldset>
+    </section>
   </main>
 
   <!-- OSA 8: footer tulee tähän -->
