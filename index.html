@@ -135,10 +135,69 @@
             <label for="vaihe-1-jako">Linkki on kopioitu talteen</label>
           </li>
         </ul>
+            <p>Linkki liitetään viestiin, jossa kaikki kootaan yhteyshenkilölle (katso kohta 2)</p>
       </fieldset>
     </section>
 
-    <!-- OSAT 4–7: kortit 2–5 tulevat tähän -->
+    <section class="kortti" id="vaihe-2" aria-labelledby="vaihe-2-otsikko">
+      <header class="kortti-ylaosa">
+        <h2 id="vaihe-2-otsikko">2. Lähetä viesti yhteyshenkilöllesi</h2>
+        <input type="checkbox" id="vaihe-2-kaikki" class="kuittaa-kaikki">
+        <label for="vaihe-2-kaikki">Kaikki tehty</label>
+      </header>
+
+      <p>Lähetä viesti vähintään 3 viikkoa ennen toivottua julkaisua. Levy-yhtiö päättää julkaisupäivän, mutta voit halutessasi esittää toiveita.</p>
+
+      <fieldset>
+        <legend>Kappaleen tiedot</legend>
+        <p class="ohje">Kirjoita viestiin:</p>
+        <ul class="ohjeet">
+          <li><strong>Artisti</strong> ja <strong>kappaleen nimi</strong> tarkalleen siinä muodossa, jossa ne näkyvät
+            julkaisussa</li>
+          <li><strong>Äänityspaikka</strong></li>
+          <li><strong>Tekijät:</strong> biitti, sanoitus, miksaus ja masterointi</li>
+        </ul>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-2-perustiedot">
+            <label for="vaihe-2-perustiedot">Artisti, kappaleen nimi ja äänityspaikka ovat viestissä</label>
+          </li>
+          <li>
+            <input type="checkbox" id="vaihe-2-tekijat">
+            <label for="vaihe-2-tekijat">Tekijät ovat viestissä</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pitch-teksti</legend>
+        <p class="ohje">Kirjoita englanniksi, noin 500 merkkiä. Teksti menee Spotifyn editoreille Ruotsiin. Kerro, miltä
+          kappale kuulostaa, mistä se kertoo ja millaiseen tunnelmaan se sopii.</p>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-2-pitch">
+            <label for="vaihe-2-pitch">Pitch-teksti on viestissä</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Lähetys</legend>
+        <p class="ohje">Lisää viestin loppuun vaiheessa 1 kopioimasi Drive-linkki.</p>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-2-linkki">
+            <label for="vaihe-2-linkki">Drive-linkki on viestissä</label>
+          </li>
+          <li>
+            <input type="checkbox" id="vaihe-2-lahetetty">
+            <label for="vaihe-2-lahetetty">Viesti on lähetetty</label>
+          </li>
+        </ul>
+      </fieldset>
+    </section>
+
+    <!-- OSAT 5–7: kortit 3–5 tulevat tähän -->
   </main>
 
   <!-- OSA 8: footer tulee tähän -->
