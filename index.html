@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julkaisuopas – kappaleen julkaisu vaihe vaiheelta</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <header class="sivun-ylaosa">
     <h1>Julkaisuopas artistille</h1>
-    <p>Käy vaiheet läpi järjestyksessä ja merkitse tehdyt kohdat. Merkinnät tallentuvat tähän selaimeen, joten voit palata sivulle myöhemmin.</p>
+    <p>Käy vaiheet läpi järjestyksessä ja merkitse tehdyt kohdat. Merkinnät tallentuvat tähän selaimeen, joten voit
+      palata sivulle myöhemmin.</p>
     <button type="button" class="aloita-alusta">Aloita alusta</button>
   </header>
 
@@ -57,68 +60,81 @@
         <label for="vaihe-1-kaikki">Kaikki tehty</label>
       </header>
 
-      <p>Tee uusi kansio <a href="https://drive.google.com/drive/home" target="_blank" rel="noopener noreferrer">Google Driveen<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a> ja lisää sinne kaikki julkaisumateriaalit:</p>
+      <p>Tee uusi kansio <a href="https://drive.google.com/drive/home" target="_blank" rel="noopener noreferrer">Google
+          Driveen<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a> ja lisää sinne kaikki
+        julkaisumateriaalit.</p>
 
       <fieldset>
-        <legend>Äänitiedostot – kaikki WAV, 44,1 kHz / 16-bit</legend>
+        <legend>Äänitiedostot</legend>
+        <p class="ohje">Kaikki kolme tiedostoa WAV-muodossa, 44,1 kHz / 16-bit. Tarkista muoto ohjelmasi
+          vientiasetuksista ennen renderöintiä.</p>
+        <ul class="ohjeet">
+          <li><strong>Master</strong></li>
+          <li><strong>TikTok-klippi</strong>, enintään 29 s. Julkaistaan TikTokissa viikko ennen julkaisua. Kappaleen
+            maistiainen; yleensä kertosäe.</li>
+          <li><strong>Minuutin klippi</strong>. Julkaistaan kappaleen yhteydessä. Valitse
+            kohta, joka on kappaleen kohokohta tai jossa sen ajatus tiivistyy parhaiten.</li>
+        </ul>
         <ul class="tehtavat">
           <li>
+            <input type="checkbox" id="vaihe-1-aanimuoto">
+            <label for="vaihe-1-aanimuoto">Tiedostomuodot on tarkistettu</label>
+          </li>
+          <li>
             <input type="checkbox" id="vaihe-1-master">
-            <label for="vaihe-1-master">Master</label>
+            <label for="vaihe-1-master">Master on kansiossa</label>
           </li>
           <li>
             <input type="checkbox" id="vaihe-1-tiktok">
-            <label for="vaihe-1-tiktok">TikTok-klippi, enintään 29 s (Tulee TikTokkiin viikko ennen julkaisua)</label>
+            <label for="vaihe-1-tiktok">TikTok-klippi on kansiossa</label>
           </li>
           <li>
             <input type="checkbox" id="vaihe-1-minuutti">
-            <label for="vaihe-1-minuutti">Minuutin klippi (julkaistaan kappaleen yhteydessä)</label>
+            <label for="vaihe-1-minuutti">Minuutin klippi on kansiossa</label>
           </li>
+
         </ul>
-        <p>Valitse TikTokkiin sellaiset kohdat kappaleesta, jotka mielestäsi ovat sen kohokohtia, tai missä sen koko ajatus parhaiten tiivistyy.</p>
       </fieldset>
 
       <fieldset>
         <legend>Kansikuva</legend>
+        <p class="ohje">Koko 3000 × 3000 px, JPG tai PNG. Hyvä ilmainen sivusto kuvanmuokkaukseen: <a
+            href="https://www.photopea.com/" target="_blank" rel="noopener noreferrer">Photopea.com<span
+              class="piilotettu"> (avautuu uuteen välilehteen)</span></a></p>
         <ul class="tehtavat">
           <li>
-            <input type="checkbox" id="vaihe-1-kansi">
-            <label for="vaihe-1-kansi">3000 × 3000 px, JPG tai PNG</label>
+            <input type="checkbox" id="vaihe-1-kansimuoto">
+            <label for="vaihe-1-kansimuoto">Koko ja tiedostomuoto on tarkistettu</label>
           </li>
+          <li>
+            <input type="checkbox" id="vaihe-1-kansi">
+            <label for="vaihe-1-kansi">Kansikuva on kansiossa</label>
+          </li>
+
         </ul>
-        <p>Hyvä ilmainen sivusto kuvanmuokkaukseen: <a href="https://www.photopea.com/" target="_blank" rel="noopener noreferrer">Photopea.com<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a></p>
       </fieldset>
 
       <fieldset>
         <legend>Kansion jakaminen</legend>
-        <p>Tarkista jakoasetukset tietokoneen selaimessa Google Drivessa:</p>
+        <p class="ohje">Tarkista jakoasetukset tietokoneen selaimessa Google Drivessa:</p>
         <ol class="ohjeet">
           <li>Klikkaa kansiota hiiren oikealla → <strong>Jaa</strong> → <strong>Jaa</strong></li>
-          <li>Kohdassa <strong>Yleinen käyttöoikeus</strong> vaihda <strong>Rajoitettu</strong> → <strong>Kuka tahansa, jolla on linkki</strong></li>
+          <li>Kohdassa <strong>Yleinen käyttöoikeus</strong> vaihda <strong>Rajoitettu</strong> → <strong>Kuka tahansa,
+              jolla on linkki</strong></li>
           <li>Paina <strong>Kopioi linkki</strong> ja sitten <strong>Valmis</strong></li>
         </ol>
-        <p class="huomio">Englanninkielisessä Drivessa: Share → General access → Anyone with the link → Copy link → Done.</p>
+        <p class="huomio">Englanninkielisessä Drivessa: Share → General access → Anyone with the link → Copy link →
+          Done.</p>
         <ul class="tehtavat">
           <li>
             <input type="checkbox" id="vaihe-1-tarkistus">
-            <label for="vaihe-1-jako">Asetukset ovat oikein</label>
+            <label for="vaihe-1-tarkistus">Asetukset ovat oikein</label>
           </li>
           <li>
             <input type="checkbox" id="vaihe-1-jako">
-            <label for="vaihe-1-jako">Toimiva linkki lisätty viestiin</label>
+            <label for="vaihe-1-jako">Linkki on kopioitu talteen</label>
           </li>
         </ul>
-      </fieldset>
-
-      <fieldset>
-        <legend>Teosto</legend>
-        <ul class="tehtavat">
-          <li>
-            <input type="checkbox" id="vaihe-1-teosto">
-            <label for="vaihe-1-teosto">Teosilmoitus tehty, jos olet Teoston asiakas</label>
-          </li>
-        </ul>
-        <p class="huomio">Lisää <a href="#vaihe-4">vaiheessa 4</a>.</p>
       </fieldset>
     </section>
 
@@ -128,4 +144,5 @@
   <!-- OSA 8: footer tulee tähän -->
 
 </body>
+
 </html>
