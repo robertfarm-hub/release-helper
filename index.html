@@ -325,10 +325,11 @@
       <p>Kaikki pakolliset vaiheet ovat valmiina. Julkaisupäivä ei ole enää kaukana. Muista promota!</p>
     </section>
 
-    <section class="kortti valinnainen" id="vaihe-4" aria-labelledby="vaihe-4-otsikko">
-      <details class="valinnaiset">
-        <summary>Valinnaiset vaiheet: Teosto ja Gramex</summary>
-        <p>Nämä eivät ole pakollisia julkaisun kannalta, mutta niiden kautta voit saada korvauksia musiikistasi.</p>
+
+    <details class="valinnaiset">
+      <summary>Valinnaiset vaiheet: Teosto ja Gramex</summary>
+      <p>Nämä eivät ole pakollisia julkaisun kannalta, mutta niiden kautta voit saada korvauksia musiikistasi.</p>
+      <section class="kortti valinnainen" id="vaihe-4" aria-labelledby="vaihe-4-otsikko">
         <header class="kortti-ylaosa">
           <h2 id="vaihe-4-otsikko">4. Teosto <span class="merkki">(valinnainen)</span></h2>
           <input type="checkbox" id="vaihe-4-kaikki" class="kuittaa-kaikki">
@@ -373,40 +374,41 @@
             </li>
           </ul>
         </fieldset>
-    </section>
+      </section>
 
-    <section class="kortti valinnainen" id="vaihe-5" aria-labelledby="vaihe-5-otsikko">
-      <header class="kortti-ylaosa">
-        <h2 id="vaihe-5-otsikko">5. Gramex <span class="merkki">(valinnainen)</span></h2>
-        <input type="checkbox" id="vaihe-5-kaikki" class="kuittaa-kaikki">
-        <label for="vaihe-5-kaikki">Kaikki tehty</label>
-      </header>
+      <section class="kortti valinnainen" id="vaihe-5" aria-labelledby="vaihe-5-otsikko">
+        <header class="kortti-ylaosa">
+          <h2 id="vaihe-5-otsikko">5. Gramex <span class="merkki">(valinnainen)</span></h2>
+          <input type="checkbox" id="vaihe-5-kaikki" class="kuittaa-kaikki">
+          <label for="vaihe-5-kaikki">Kaikki tehty</label>
+        </header>
 
-      <p>Gramex maksaa korvauksia äänitteellä esiintyville ja äänitteen tuottajalle, kun kappale soi radiossa,
-        televisiossa tai julkisissa tiloissa, kuten kaupoissa ja ravintoloissa. Spotify-kuunteluista Gramex ei maksa.
-      </p>
-
-      <fieldset>
-        <legend>Gramexin asiakkuus</legend>
-        <p class="ohje">Gramex tulee ajankohtaiseksi, jos kappaleesi alkaa soida radiossa tai televisiossa. Liittyminen
-          on ilmaista, ja kulut vähennetään maksettavista korvauksista. Korvauksia maksetaan kolmelta vuodelta
-          taaksepäin. <a href="https://www.gramex.fi/esittajat-ja-tuottajat/liity-asiakkaaksi/" target="_blank"
-            rel="noopener noreferrer">Liity Gramexiin<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a>
+        <p>Gramex maksaa korvauksia äänitteellä esiintyville ja äänitteen tuottajalle, kun kappale soi radiossa,
+          televisiossa tai julkisissa tiloissa, kuten kaupoissa ja ravintoloissa. Spotify-kuunteluista Gramex ei maksa.
         </p>
-        <p class="huomio">Ääniteilmoituksen tekee äänitteen tuottaja. Jos liityt Gramexiin, ota yhteyttä
-          yhteyshenkilöösi.</p>
-        <ul class="tehtavat">
-          <li>
-            <input type="checkbox" id="vaihe-5-asiakas">
-            <label for="vaihe-5-asiakas">Olen Gramexin asiakas</label>
-          </li>
-          <li>
-            <input type="checkbox" id="vaihe-5-yhteys">
-            <label for="vaihe-5-yhteys">Olen ollut yhteydessä yhteyshenkilööni</label>
-          </li>
-        </ul>
-      </fieldset>
-    </section>
+
+        <fieldset>
+          <legend>Gramexin asiakkuus</legend>
+          <p class="ohje">Gramex tulee ajankohtaiseksi, jos kappaleesi alkaa soida radiossa tai televisiossa.
+            Liittyminen
+            on ilmaista, ja kulut vähennetään maksettavista korvauksista. Korvauksia maksetaan kolmelta vuodelta
+            taaksepäin. <a href="https://www.gramex.fi/esittajat-ja-tuottajat/liity-asiakkaaksi/" target="_blank"
+              rel="noopener noreferrer">Liity Gramexiin<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a>
+          </p>
+          <p class="huomio">Ääniteilmoituksen tekee äänitteen tuottaja. Jos liityt Gramexiin, ota yhteyttä
+            yhteyshenkilöösi.</p>
+          <ul class="tehtavat">
+            <li>
+              <input type="checkbox" id="vaihe-5-asiakas">
+              <label for="vaihe-5-asiakas">Olen Gramexin asiakas</label>
+            </li>
+            <li>
+              <input type="checkbox" id="vaihe-5-yhteys">
+              <label for="vaihe-5-yhteys">Olen ollut yhteydessä yhteyshenkilööni</label>
+            </li>
+          </ul>
+        </fieldset>
+      </section>
     </details>
 
     <p class="piilotettu" id="tila-ilmoitus" role="status"></p>
