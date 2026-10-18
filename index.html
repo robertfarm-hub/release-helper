@@ -325,46 +325,89 @@
       <p>Kaikki pakolliset vaiheet ovat valmiina. Julkaisupäivä ei ole enää kaukana. Muista promota!</p>
     </section>
 
-        <section class="kortti valinnainen" id="vaihe-4" aria-labelledby="vaihe-4-otsikko">
+    <section class="kortti valinnainen" id="vaihe-4" aria-labelledby="vaihe-4-otsikko">
+      <details class="valinnaiset">
+        <summary>Valinnaiset vaiheet: Teosto ja Gramex</summary>
+        <p>Nämä eivät ole pakollisia julkaisun kannalta, mutta niiden kautta voit saada korvauksia musiikistasi.</p>
+        <header class="kortti-ylaosa">
+          <h2 id="vaihe-4-otsikko">4. Teosto <span class="merkki">(valinnainen)</span></h2>
+          <input type="checkbox" id="vaihe-4-kaikki" class="kuittaa-kaikki">
+          <label for="vaihe-4-kaikki">Kaikki tehty</label>
+        </header>
+
+        <p>Teosto maksaa korvauksia sävellyksen ja sanoituksen tekijöille, kun musiikkia soitetaan esimerkiksi
+          Spotifyssa, radiossa tai keikoilla. Teosilmoitus kannattaa tehdä ennen julkaisua.</p>
+
+        <fieldset>
+          <legend>Teoston asiakkuus</legend>
+          <p class="ohje">Liittyminen maksaa kerran 125,50 € (100 € + alv). Vuosimaksuja ei ole. Voit liittyä, kun
+            kappale on äänitetty. <a href="https://www.teosto.fi/musiikintekijalle/liity-teostoon/" target="_blank"
+              rel="noopener noreferrer">Liity Teostoon<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a>
+          </p>
+          <ul class="tehtavat">
+            <li>
+              <input type="checkbox" id="vaihe-4-asiakas">
+              <label for="vaihe-4-asiakas">Olen Teoston asiakas</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Teosilmoitus</legend>
+          <ol class="ohjeet">
+            <li>Sovi jako-osuudet muiden tekijöiden kanssa</li>
+            <li>Kirjaudu <a href="https://extranet.teosto.fi/" target="_blank" rel="noopener noreferrer">Teoston
+                verkkopalveluun<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a></li>
+            <li>Tee teosilmoitus: kappaleen nimi, tekijät ja jako-osuudet</li>
+          </ol>
+          <p class="huomio">Rekisteröinti kestää noin viisi arkipäivää. Jos ilmoitus myöhästyy, Spotify-korvaukset
+            tulevat jopa 18 kuukautta myöhässä tai jäävät kokonaan saamatta.</p>
+          <ul class="tehtavat">
+            <li>
+              <input type="checkbox" id="vaihe-4-osuudet">
+              <label for="vaihe-4-osuudet">Jako-osuuksista on sovittu</label>
+            </li>
+            <li>
+              <input type="checkbox" id="vaihe-4-ilmoitus">
+              <label for="vaihe-4-ilmoitus">Teosilmoitus on tehty</label>
+            </li>
+          </ul>
+        </fieldset>
+    </section>
+
+    <section class="kortti valinnainen" id="vaihe-5" aria-labelledby="vaihe-5-otsikko">
       <header class="kortti-ylaosa">
-        <h2 id="vaihe-4-otsikko">4. Teosto <span class="merkki">(valinnainen)</span></h2>
-        <input type="checkbox" id="vaihe-4-kaikki" class="kuittaa-kaikki">
-        <label for="vaihe-4-kaikki">Kaikki tehty</label>
+        <h2 id="vaihe-5-otsikko">5. Gramex <span class="merkki">(valinnainen)</span></h2>
+        <input type="checkbox" id="vaihe-5-kaikki" class="kuittaa-kaikki">
+        <label for="vaihe-5-kaikki">Kaikki tehty</label>
       </header>
 
-      <p>Teosto maksaa korvauksia sävellyksen ja sanoituksen tekijöille, kun musiikkia soitetaan esimerkiksi Spotifyssa, radiossa tai keikoilla. Teosilmoitus kannattaa tehdä ennen julkaisua.</p>
+      <p>Gramex maksaa korvauksia äänitteellä esiintyville ja äänitteen tuottajalle, kun kappale soi radiossa,
+        televisiossa tai julkisissa tiloissa, kuten kaupoissa ja ravintoloissa. Spotify-kuunteluista Gramex ei maksa.
+      </p>
 
       <fieldset>
-        <legend>Teoston asiakkuus</legend>
-        <p class="ohje">Liittyminen maksaa kerran 125,50 € (100 € + alv). Vuosimaksuja ei ole. Voit liittyä, kun kappale on äänitetty. <a href="https://www.teosto.fi/musiikintekijalle/liity-teostoon/" target="_blank" rel="noopener noreferrer">Liity Teostoon<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a></p>
+        <legend>Gramexin asiakkuus</legend>
+        <p class="ohje">Gramex tulee ajankohtaiseksi, jos kappaleesi alkaa soida radiossa tai televisiossa. Liittyminen
+          on ilmaista, ja kulut vähennetään maksettavista korvauksista. Korvauksia maksetaan kolmelta vuodelta
+          taaksepäin. <a href="https://www.gramex.fi/esittajat-ja-tuottajat/liity-asiakkaaksi/" target="_blank"
+            rel="noopener noreferrer">Liity Gramexiin<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a>
+        </p>
+        <p class="huomio">Ääniteilmoituksen tekee äänitteen tuottaja. Jos liityt Gramexiin, ota yhteyttä
+          yhteyshenkilöösi.</p>
         <ul class="tehtavat">
           <li>
-            <input type="checkbox" id="vaihe-4-asiakas">
-            <label for="vaihe-4-asiakas">Olen Teoston asiakas</label>
-          </li>
-        </ul>
-      </fieldset>
-
-      <fieldset>
-        <legend>Teosilmoitus</legend>
-        <ol class="ohjeet">
-          <li>Sovi jako-osuudet muiden tekijöiden kanssa</li>
-          <li>Kirjaudu <a href="https://extranet.teosto.fi/" target="_blank" rel="noopener noreferrer">Teoston verkkopalveluun<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a></li>
-          <li>Tee teosilmoitus: kappaleen nimi, tekijät ja jako-osuudet</li>
-        </ol>
-        <p class="huomio">Rekisteröinti kestää noin viisi arkipäivää. Jos ilmoitus myöhästyy, Spotify-korvaukset tulevat jopa 18 kuukautta myöhässä tai jäävät kokonaan saamatta.</p>
-        <ul class="tehtavat">
-          <li>
-            <input type="checkbox" id="vaihe-4-osuudet">
-            <label for="vaihe-4-osuudet">Jako-osuuksista on sovittu</label>
+            <input type="checkbox" id="vaihe-5-asiakas">
+            <label for="vaihe-5-asiakas">Olen Gramexin asiakas</label>
           </li>
           <li>
-            <input type="checkbox" id="vaihe-4-ilmoitus">
-            <label for="vaihe-4-ilmoitus">Teosilmoitus on tehty</label>
+            <input type="checkbox" id="vaihe-5-yhteys">
+            <label for="vaihe-5-yhteys">Olen ollut yhteydessä yhteyshenkilööni</label>
           </li>
         </ul>
       </fieldset>
     </section>
+    </details>
 
     <p class="piilotettu" id="tila-ilmoitus" role="status"></p>
   </main>
