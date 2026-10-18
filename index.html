@@ -264,6 +264,62 @@
         </ul>
       </fieldset>
     </section>
+
+    <section class="onnittelu" id="valivaihe" aria-labelledby="valivaihe-otsikko" hidden>
+      <h2 id="valivaihe-otsikko">Hienoa, kappaleesi on lähetetty!</h2>
+      <p>Yhteyshenkilösi kertoo sinulle julkaisupäivän, kun se on tiedossa. Palaa tälle sivulle, kun julkaisu lähestyy,
+        ja jatka vaiheeseen 3. Merkintäsi pysyvät tallessa.</p>
+    </section>
+
+    <section class="kortti" id="vaihe-3" aria-labelledby="vaihe-3-otsikko">
+      <header class="kortti-ylaosa">
+        <h2 id="vaihe-3-otsikko">3. Pitchaa Spotifyyn</h2>
+        <input type="checkbox" id="vaihe-3-kaikki" class="kuittaa-kaikki">
+        <label for="vaihe-3-kaikki">Kaikki tehty</label>
+      </header>
+
+      <p>Kun levy-yhtiö on toimittanut kappaleen Spotifyyn, se ilmestyy Spotify for Artistsiin, yleensä noin viikko
+        ennen julkaisua. Tarkista tilanne jo hieman ennen sitä ja pitchaa kappale heti, kun se näkyy.</p>
+
+      <fieldset>
+        <legend>Kappaleen löytäminen</legend>
+        <ol class="ohjeet">
+          <li>Kirjaudu <a href="https://artists.spotify.com" target="_blank" rel="noopener noreferrer">Spotify for
+              Artistsiin<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a></li>
+          <li>Valitse <strong>Music</strong> → <strong>Upcoming</strong></li>
+        </ol>
+        <p class="huomio">Jos kappale ei vielä näy, odota ja tarkista uudelleen seuraavana päivänä.</p>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-3-nakyy">
+            <label for="vaihe-3-nakyy">Kappale näkyy Upcoming-listassa</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pitch</legend>
+        <ol class="ohjeet">
+          <li>Valitse kappale ja paina <strong>Pitch a song</strong></li>
+          <li>Valitse kappaletta kuvaavat tiedot, kuten tyylilaji, tunnelma ja soittimet</li>
+          <li>Liitä tekstikenttään <a href="#vaihe-2">vaiheen 2</a> pitch-teksti</li>
+          <li>Lähetä pitch</li>
+        </ol>
+        <p class="huomio">Pitch on tehtävä viimeistään 7 päivää ennen julkaisua, muuten kappale ei mene seuraajiesi
+          Release Radar -soittolistalle. Pitchata voi vain yhtä kappaletta kerrallaan, eikä kappaletta voi pitchata, jos
+          olet siinä vain featuring-artistina.</p>
+        <ul class="tehtavat">
+          <li>
+            <input type="checkbox" id="vaihe-3-tiedot">
+            <label for="vaihe-3-tiedot">Lomakkeen tiedot on valittu</label>
+          </li>
+          <li>
+            <input type="checkbox" id="vaihe-3-lahetetty">
+            <label for="vaihe-3-lahetetty">Pitch on lähetetty</label>
+          </li>
+        </ul>
+      </fieldset>
+    </section>
     <section class="onnittelu" id="valmis" aria-labelledby="valmis-otsikko" hidden>
       <h2 id="valmis-otsikko">Onneksi olkoon!</h2>
       <p>Kaikki pakolliset vaiheet ovat valmiina. Kappaleesi on matkalla julkaisuun.</p>
