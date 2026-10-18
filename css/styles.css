@@ -475,3 +475,154 @@ input[type="checkbox"]:indeterminate::before {
         transition: transform 120ms ease-out;
     }
 }
+
+/* ===== ALAPALKKI ===== */
+
+:root {
+  --palkin-korkeus: calc(2.5rem + 2 * var(--vali-s));
+}
+
+html {
+  scroll-padding-block: var(--vali-m) calc(var(--palkin-korkeus) + var(--vali-m));
+}
+
+body {
+  padding-block-end: var(--palkin-korkeus);
+}
+
+.edistyminen {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 2;
+  background-color: var(--vari-pinta);
+  border-block-start: 1px solid var(--vari-reuna);
+  box-shadow: var(--varjo);
+}
+
+.edistyminen ol {
+  display: flex;
+  justify-content: center;
+  gap: var(--vali-s);
+  margin: 0;
+  padding: var(--vali-s) var(--vali-m);
+  list-style: none;
+}
+
+.edistyminen a {
+  display: grid;
+  place-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-weight: 700;
+  color: var(--vari-teksti);
+  text-decoration: none;
+  border: 2px solid var(--vari-reuna-vahva);
+  border-radius: var(--pyoristys-pyorea);
+}
+
+.edistyminen a:hover {
+  border-color: var(--vari-korostus);
+}
+
+.edistyminen .valinnainen a {
+  border-style: dashed;
+}
+
+/* JS lisää luokan tehty, kun vaihe on valmis */
+.edistyminen a.tehty {
+  color: var(--vari-pinta);
+  background-color: var(--vari-tehty);
+  border-color: var(--vari-tehty);
+}
+
+/* Lyhyt näkymä (suuri zoom, puhelin vaakatasossa): palkki tavalliseksi navigaatioksi */
+@media (max-height: 25rem) {
+  .edistyminen {
+    position: static;
+    border-block: 1px solid var(--vari-reuna);
+    box-shadow: none;
+  }
+
+  body {
+    padding-block-end: 0;
+  }
+
+  html {
+    scroll-padding-block-end: var(--vali-m);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===== VALINNAISET VAIHEET ===== */
+
+.valinnaiset summary {
+  padding: var(--vali-m) var(--vali-l);
+  font-weight: 700;
+  background-color: var(--vari-pinta);
+  border: 1px dashed var(--vari-reuna-vahva);
+  border-radius: var(--pyoristys-m);
+  cursor: pointer;
+}
+
+.valinnaiset summary:hover {
+  border-color: var(--vari-korostus);
+}
+
+.valinnaiset > :not(summary) {
+  margin-block-start: var(--vali-l);
+}
+
+/* ===== ONNITTELUT ===== */
+
+.onnittelu {
+  padding: var(--vali-l);
+  text-align: center;
+  background-color: var(--vari-pinta);
+  border: 2px solid var(--vari-valinnainen);
+  border-radius: var(--pyoristys-m);
+}
+
+.onnittelu h2 {
+  color: var(--vari-valinnainen);
+}
+
+.onnittelu p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .onnittelu {
+    animation: ilmesty 600ms ease-out;
+  }
+}
+
+@keyframes ilmesty {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== FOOTER ===== */
+
+.sivun-alaosa {
+  display: grid;
+  gap: var(--vali-m);
+  justify-items: start;
+}
+
+.sivun-alaosa p {
+  margin: 0;
+  font-size: var(--fontti-pieni);
+}
