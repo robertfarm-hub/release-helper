@@ -2,69 +2,476 @@
 
 /* Tumma teema (oletus) */
 :root {
-  color-scheme: dark light;
+    color-scheme: dark light;
 
-  --vari-tausta: #051838;
-  --vari-pinta: #152C55;
-  --vari-teksti: #FFE1AA;
-  --vari-korostus: #D4966A;
-  --vari-korostus-teksti: #051838;
-  --vari-tehty: #6BA099;
-  --vari-valinnainen: #D4AF6A;
-  --vari-reuna: #2D4671;
-  --vari-reuna-vahva: #7689A9;
+    --vari-tausta: #121B2B;
+    --vari-pinta: #1C2430;
+    --vari-teksti: color-mix(in srgb, #BEB199 50%, white);
+    --vari-korostus: #BEA899;
+    --vari-korostus-teksti: #121B2B;
+    --vari-tehty: color-mix(in srgb, #607774 70%, white);
+    --vari-valinnainen: #BEB199;
+    --vari-reuna: #303741;
+    --vari-reuna-vahva: #68707E;
+    --vari-virhe: #D9958C;
 }
 
 /* Vaalea teema */
 @media (prefers-color-scheme: light) {
-  :root {
-    --vari-tausta: #FFCDAA;
-    --vari-pinta: #FFE1AA;
-    --vari-teksti: #051838;
-    --vari-korostus: #804115;
-    --vari-korostus-teksti: #FFE1AA;
-    --vari-tehty: #0D5047;
-    --vari-valinnainen: #553700;
-    --vari-reuna: #D4966A;
-    --vari-reuna-vahva: #AA6839;
-  }
+    :root {
+        --vari-tausta: color-mix(in srgb, #BEB199 25%, white);
+        --vari-pinta: color-mix(in srgb, #BEB199 12%, white);
+        --vari-teksti: #121B2B;
+        --vari-korostus: #625246;
+        --vari-korostus-teksti: color-mix(in srgb, #BEB199 12%, white);
+        --vari-tehty: #455C59;
+        --vari-valinnainen: #493D27;
+        --vari-reuna: #BEB199;
+        --vari-reuna-vahva: #68707E;
+        --vari-virhe: #9E3B33;
+    }
 }
 
 /* ===== MITAT JA TYPOGRAFIA ===== */
 
 :root {
-  /* Välistykset */
-  --vali-xs: 0.25rem;
-  --vali-s: 0.5rem;
-  --vali-m: 1rem;
-  --vali-l: clamp(1.25rem, 1rem + 1vw, 2rem);
-  --vali-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+    /* Välistykset */
+    --vali-xs: 0.25rem;
+    --vali-s: 0.5rem;
+    --vali-m: 1rem;
+    --vali-l: clamp(1.25rem, 1rem + 1vw, 2rem);
+    --vali-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
 
-  /* Typografia */
-  --fontti: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --fontti-pieni: 0.875rem;
-  --fontti-perus: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --fontti-h2: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
-  --fontti-h1: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
-  --rivivali: 1.5;
-  --rivivali-otsikko: 1.2;
+    /* Typografia */
+    --fontti: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --fontti-pieni: 0.875rem;
+    --fontti-perus: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --fontti-h2: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+    --fontti-h1: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+    --rivivali: 1.5;
+    --rivivali-otsikko: 1.2;
 
-  /* Leveydet */
-  --sivun-leveys: 48rem;
+    /* Leveydet */
+    --sivun-leveys: 48rem;
 
-  /* Pyöristykset */
-  --pyoristys-s: 0.25rem;
-  --pyoristys-m: 0.75rem;
-  --pyoristys-pyorea: 999px;
+    /* Pyöristykset */
+    --pyoristys-s: 0.25rem;
+    --pyoristys-m: 0.75rem;
+    --pyoristys-pyorea: 999px;
 
-  /* Varjot */
-  --varjo: 0 2px 8px rgb(0 0 0 / 0.25);
+    /* Varjot */
+    --varjo: 0 2px 8px rgb(0 0 0 / 0.25);
 }
 
 body {
-  background-color: var(--vari-tausta);
+    background-color: var(--vari-tausta);
+    color: var(--vari-teksti);
+    font-family: var(--fontti);
+    font-size: var(--fontti-perus);
+    line-height: var(--rivivali);
+}
+
+/* ===== PERUSTA ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2 {
+    line-height: var(--rivivali-otsikko);
+    margin-block: 0 var(--vali-s);
+}
+
+h1 {
+    font-size: var(--fontti-h1);
+}
+
+h2 {
+    font-size: var(--fontti-h2);
+}
+
+p {
+    margin-block: 0 var(--vali-m);
+}
+
+a {
+    color: var(--vari-korostus);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--vari-korostus);
+    outline-offset: 2px;
+}
+
+.piilotettu {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== ASETTELU ===== */
+
+.sivun-ylaosa,
+main,
+.sivun-alaosa {
+    width: min(100% - 2 * var(--vali-m), var(--sivun-leveys));
+    margin-inline: auto;
+}
+
+.sivun-ylaosa {
+    padding-block: var(--vali-xl) var(--vali-l);
+}
+
+main {
+    display: grid;
+    gap: var(--vali-l);
+}
+
+.sivun-alaosa {
+    padding-block: var(--vali-xl);
+}
+
+/* ===== KORTIT ===== */
+
+.kortti {
+    container-type: inline-size;
+    container-name: kortti;
+    display: grid;
+    gap: var(--vali-l);
+    padding: var(--vali-l);
+    background-color: var(--vari-pinta);
+    border: 1px solid var(--vari-reuna);
+    border-radius: var(--pyoristys-m);
+    box-shadow: var(--varjo);
+}
+
+.kortti.valinnainen {
+    border-style: dashed;
+}
+
+.kortti p,
+.kortti ul,
+.kortti ol,
+.kortti figure {
+    margin: 0;
+}
+
+/* Kortin yläosa: otsikko vasemmalla, "Kaikki tehty" oikealla */
+.kortti-ylaosa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--vali-s);
+}
+
+.kortti-ylaosa h2 {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+}
+
+.merkki {
+    font-size: var(--fontti-pieni);
+    font-weight: 400;
+    color: var(--vari-valinnainen);
+}
+
+/* Kapeassa kortissa otsikko omalle rivilleen */
+@container kortti (max-width: 28rem) {
+    .kortti-ylaosa h2 {
+        flex-basis: 100%;
+    }
+}
+
+/* Ryhmät kortin sisällä */
+.kortti fieldset {
+    display: grid;
+    gap: var(--vali-s);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.kortti legend {
+    padding: 0;
+    margin-bottom: var(--vali-s);
+    font-weight: 700;
+}
+
+/* Ohjelistat */
+.ohjeet {
+    display: grid;
+    gap: var(--vali-xs);
+    padding-inline-start: 1.25rem;
+}
+
+.huomio {
+    padding-inline-start: var(--vali-s);
+    border-inline-start: 3px solid var(--vari-korostus);
+    font-size: var(--fontti-pieni);
+}
+
+/* Tehtävälistat */
+.tehtavat {
+    display: grid;
+    gap: var(--vali-s);
+    padding: 0;
+    list-style: none;
+}
+
+.tehtavat li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--vali-s);
+}
+
+/* ===== NAPIT ===== */
+
+.nappi {
+  font: inherit;
+  font-weight: 600;
+  padding: var(--vali-s) var(--vali-m);
+  color: var(--vari-korostus);
+  background-color: transparent;
+  border: 2px solid var(--vari-korostus);
+  border-radius: var(--pyoristys-pyorea);
+  cursor: pointer;
+}
+
+.nappi:hover {
+  color: var(--vari-korostus-teksti);
+  background-color: var(--vari-korostus);
+}
+
+.nappi-ensisijainen {
+  color: var(--vari-korostus-teksti);
+  background-color: var(--vari-korostus);
+}
+
+.nappi-ensisijainen:hover {
+  color: var(--vari-korostus);
+  background-color: transparent;
+}
+
+.nappi-vaarallinen {
+  color: var(--vari-pinta);
+  background-color: var(--vari-virhe);
+  border-color: var(--vari-virhe);
+}
+
+.nappi-vaarallinen:hover {
+  color: var(--vari-virhe);
+  background-color: transparent;
+}
+
+.aloita-alusta-alue {
+    position: relative;
+    display: inline-block;
+}
+
+.vihje {
+    display: none;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    z-index: 1;
+    width: max-content;
+    max-width: 16rem;
+    padding: var(--vali-xs) var(--vali-s);
+    font-size: var(--fontti-pieni);
+    color: var(--vari-teksti);
+    background-color: var(--vari-pinta);
+    border: 1px solid var(--vari-reuna-vahva);
+    border-radius: var(--pyoristys-s);
+    box-shadow: var(--varjo);
+}
+
+.aloita-alusta-alue:hover .vihje,
+.aloita-alusta:focus-visible+.vihje {
+    display: block;
+}
+
+/* ===== VAHVISTUSDIALOGI ===== */
+
+.vahvistus {
+  max-width: min(100% - 2 * var(--vali-m), 26rem);
+  padding: var(--vali-l);
   color: var(--vari-teksti);
-  font-family: var(--fontti);
-  font-size: var(--fontti-perus);
-  line-height: var(--rivivali);
+  background-color: var(--vari-pinta);
+  border: 1px solid var(--vari-reuna);
+  border-radius: var(--pyoristys-m);
+  box-shadow: var(--varjo);
+}
+
+.vahvistus::backdrop {
+  background-color: rgb(0 0 0 / 0.6);
+}
+
+.vahvistus-napit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--vali-s);
+  margin-top: var(--vali-l);
+}
+
+/* ===== LOMAKE ===== */
+
+.viestilomake {
+  display: grid;
+  gap: var(--vali-l);
+}
+
+.kentta {
+  display: grid;
+  gap: var(--vali-xs);
+}
+
+.kentta label {
+  font-weight: 600;
+}
+
+.kentta input,
+.kentta textarea {
+  width: 100%;
+  padding: var(--vali-s);
+  font: inherit;
+  color: var(--vari-teksti);
+  background-color: var(--vari-tausta);
+  border: 2px solid var(--vari-reuna-vahva);
+  border-radius: var(--pyoristys-s);
+}
+
+.kentta input:hover,
+.kentta textarea:hover {
+  border-color: var(--vari-korostus);
+}
+
+.kentta input:user-invalid,
+.kentta textarea:user-invalid {
+  border-color: var(--vari-virhe);
+  border-style: dashed;
+}
+
+.kentta textarea {
+  resize: vertical;
+}
+
+/* Valmis viesti: luettavissa, ei muokattavissa */
+.kentta textarea[readonly] {
+  border-style: dotted;
+  cursor: default;
+}
+
+.kopiointi-tila {
+  font-size: var(--fontti-pieni);
+}
+
+/* Pitch-esimerkki */
+.esimerkki {
+  padding: var(--vali-m);
+  background-color: var(--vari-tausta);
+  border-radius: var(--pyoristys-s);
+}
+
+.esimerkki figcaption {
+  margin-bottom: var(--vali-xs);
+  font-size: var(--fontti-pieni);
+  font-weight: 600;
+}
+
+.esimerkki blockquote {
+  margin: 0;
+  font-style: italic;
+}
+
+/* Footerissa selite napin yläpuolelle, ettei se jää sivun reunan tai alapalkin alle */
+.sivun-alaosa .vihje {
+    inset-block-start: auto;
+    inset-block-end: 100%;
+}
+
+
+
+/* ===== CHECKBOXIT ===== */
+
+input[type="checkbox"] {
+    appearance: none;
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    border: 2px solid var(--vari-reuna-vahva);
+    border-radius: var(--pyoristys-s);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input[type="checkbox"]+label {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:hover {
+    border-color: var(--vari-korostus);
+}
+
+/* Merkki ruudun sisällä: piilossa, kunnes ruutu ruksataan */
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.85rem;
+    height: 0.85rem;
+    background-color: var(--vari-pinta);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0, 43% 62%);
+    transform: scale(0);
+}
+
+/* Ruksattu: täytetty ruutu ja väkänen */
+input[type="checkbox"]:checked {
+    background-color: var(--vari-tehty);
+    border-color: var(--vari-tehty);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* Osittain valmis: vaakaviiva */
+input[type="checkbox"]:indeterminate {
+    border-color: var(--vari-tehty);
+}
+
+input[type="checkbox"]:indeterminate::before {
+    width: 0.75rem;
+    height: 0.2rem;
+    background-color: var(--vari-tehty);
+    clip-path: none;
+    transform: scale(1);
+}
+
+/* Väkäsen liike vain, jos käyttäjä ei ole pyytänyt vähentämään animaatioita */
+@media (prefers-reduced-motion: no-preference) {
+    input[type="checkbox"]::before {
+        transition: transform 120ms ease-out;
+    }
 }

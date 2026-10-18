@@ -14,7 +14,10 @@
     <h1>Julkaisuopas artistille</h1>
     <p>Käy vaiheet läpi järjestyksessä ja merkitse tehdyt kohdat. Merkinnät tallentuvat tähän selaimeen, joten voit
       palata sivulle myöhemmin.</p>
-    <button type="button" class="aloita-alusta">Aloita alusta</button>
+    <div class="aloita-alusta-alue">
+      <button type="button" class="nappi aloita-alusta" aria-describedby="vihje-ylaosa">Aloita alusta</button>
+      <span class="vihje" id="vihje-ylaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
+    </div>
   </header>
 
   <nav class="edistyminen" aria-label="Vaiheet">
@@ -244,7 +247,7 @@
             <label for="valmis-viesti">Viesti yhteyshenkilölle</label>
             <textarea id="valmis-viesti" rows="16" readonly></textarea>
           </div>
-          <button type="button" class="kopioi-viesti">Kopioi viesti</button>
+          <button type="button" class="nappi nappi-ensisijainen kopioi-viesti">Kopioi viesti</button>
           <p class="kopiointi-tila" role="status"></p>
         </fieldset>
 
@@ -413,11 +416,25 @@
 
     <p class="piilotettu" id="tila-ilmoitus" role="status"></p>
   </main>
-  
+
   <footer class="sivun-alaosa">
-    <button type="button" class="aloita-alusta">Aloita alusta</button>
+    <div class="aloita-alusta-alue">
+      <button type="button" class="aloita-alusta" aria-describedby="vihje-alaosa">Aloita alusta</button>
+      <span class="vihje" id="vihje-alaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
+    </div>
     <p>Tekijä: Robert Färm · Tiedot tarkistettu lokakuussa 2026</p>
   </footer>
+
+  <dialog class="vahvistus" id="vahvistus" aria-labelledby="vahvistus-otsikko">
+    <form method="dialog">
+      <h2 id="vahvistus-otsikko">Aloitetaanko alusta?</h2>
+      <p>Kaikki merkinnät ja lomakkeen tiedot poistetaan. Tätä ei voi perua.</p>
+      <div class="vahvistus-napit">
+        <button type="submit" value="peruuta" class="nappi" autofocus>Peruuta</button>
+        <button type="submit" value="tyhjenna" class="nappi nappi-vaarallinen">Tyhjennä kaikki</button>
+      </div>
+    </form>
+  </dialog>
 
 </body>
 
