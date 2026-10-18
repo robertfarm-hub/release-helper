@@ -1,0 +1,70 @@
+/* ===== VÄRIT ===== */
+
+/* Tumma teema (oletus) */
+:root {
+  color-scheme: dark light;
+
+  --vari-tausta: #051838;
+  --vari-pinta: #152C55;
+  --vari-teksti: #FFE1AA;
+  --vari-korostus: #D4966A;
+  --vari-korostus-teksti: #051838;
+  --vari-tehty: #6BA099;
+  --vari-valinnainen: #D4AF6A;
+  --vari-reuna: #2D4671;
+  --vari-reuna-vahva: #7689A9;
+}
+
+/* Vaalea teema */
+@media (prefers-color-scheme: light) {
+  :root {
+    --vari-tausta: #FFCDAA;
+    --vari-pinta: #FFE1AA;
+    --vari-teksti: #051838;
+    --vari-korostus: #804115;
+    --vari-korostus-teksti: #FFE1AA;
+    --vari-tehty: #0D5047;
+    --vari-valinnainen: #553700;
+    --vari-reuna: #D4966A;
+    --vari-reuna-vahva: #AA6839;
+  }
+}
+
+/* ===== MITAT JA TYPOGRAFIA ===== */
+
+:root {
+  /* Välistykset */
+  --vali-xs: 0.25rem;
+  --vali-s: 0.5rem;
+  --vali-m: 1rem;
+  --vali-l: clamp(1.25rem, 1rem + 1vw, 2rem);
+  --vali-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+
+  /* Typografia */
+  --fontti: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fontti-pieni: 0.875rem;
+  --fontti-perus: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fontti-h2: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
+  --fontti-h1: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+  --rivivali: 1.5;
+  --rivivali-otsikko: 1.2;
+
+  /* Leveydet */
+  --sivun-leveys: 48rem;
+
+  /* Pyöristykset */
+  --pyoristys-s: 0.25rem;
+  --pyoristys-m: 0.75rem;
+  --pyoristys-pyorea: 999px;
+
+  /* Varjot */
+  --varjo: 0 2px 8px rgb(0 0 0 / 0.25);
+}
+
+body {
+  background-color: var(--vari-tausta);
+  color: var(--vari-teksti);
+  font-family: var(--fontti);
+  font-size: var(--fontti-perus);
+  line-height: var(--rivivali);
+}
