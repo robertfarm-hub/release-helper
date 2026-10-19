@@ -47,7 +47,7 @@
     --fontti-pieni: 0.875rem;
     --fontti-perus: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
     --fontti-h2: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
-    --fontti-h1: clamp(2.5rem, 1.5rem + 5vw, 5rem);
+    --fontti-h1: min(8cqi, 5rem);
     --rivivali: 1.5;
     --rivivali-otsikko: 1.2;
 
@@ -187,9 +187,9 @@ main {
 
 .ylaosa-sisalto {
   display: grid;
-  grid-template-columns: 1fr minmax(5rem, 8rem);
+  grid-template-columns: 1fr minmax(0, min(30%, 45vh));
   grid-template-areas:
-    "otsikko   otsikko"
+    "otsikko   hahmo"
     "iskulause hahmo";
   column-gap: var(--vali-m);
   align-items: center;
@@ -201,6 +201,7 @@ main {
 
 .iskulause {
   grid-area: iskulause;
+  font-size: max(var(--fontti-perus), 3.25cqi);
 }
 
 .hahmo {
@@ -211,15 +212,6 @@ main {
   display: block;
   width: 100%;
   height: auto;
-}
-
-@container (min-width: 40rem) {
-  .ylaosa-sisalto {
-    grid-template-columns: 1fr minmax(6rem, 15rem);
-    grid-template-areas:
-      "otsikko   hahmo"
-      "iskulause hahmo";
-  }
 }
 
 /* ===== KORTIT ===== */
@@ -626,15 +618,14 @@ body {
     }
 }
 
-/* Matala mutta leveä näkymä (puhelin vaakatasossa): palkki pystyyn oikeaan reunaan.
-   16rem = viiden napin ja välien korkeus, jotta pystypalkki mahtuu näkymään. */
-@media (max-height: 25rem) and (min-height: 16rem) and (min-width: 40rem) {
+/* Matala mutta leveä näkymä (puhelin vaakatasossa): palkki pystyyn oikeaan reunaan. */
+@media (max-height: 25rem) and (min-width: 40rem) {
     .edistyminen {
         position: fixed;
         inset-block: 0;
         inset-inline: auto 0;
         display: grid;
-        align-content: center;
+        overflow-y: auto;
         border-block: 0;
         border-inline-start: 1px solid var(--vari-reuna);
         box-shadow: var(--varjo);
@@ -642,6 +633,7 @@ body {
 
     .edistyminen ol {
         flex-direction: column;
+        margin-block: auto;
         padding: var(--vali-s);
     }
 
