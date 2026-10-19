@@ -179,6 +179,35 @@ main {
     padding-block: var(--vali-xl);
 }
 
+/* ===== HAHMO ===== */
+
+.sivun-ylaosa {
+  container-type: inline-size;
+  display: grid;
+  gap: var(--vali-l);
+  align-items: center;
+}
+
+.hahmo {
+  display: none;
+}
+
+.hahmo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@container (min-width: 40rem) {
+  .sivun-ylaosa {
+    grid-template-columns: 1fr clamp(9rem, 28%, 13rem);
+  }
+
+  .hahmo {
+    display: block;
+  }
+}
+
 /* ===== KORTIT ===== */
 
 .kortti {
