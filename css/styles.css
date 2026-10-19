@@ -187,12 +187,24 @@ main {
 
 .ylaosa-sisalto {
   display: grid;
-  gap: var(--vali-l);
+  grid-template-columns: 1fr minmax(5rem, 8rem);
+  grid-template-areas:
+    "otsikko   otsikko"
+    "iskulause hahmo";
+  column-gap: var(--vali-m);
   align-items: center;
 }
 
+.ylaosa-sisalto h1 {
+  grid-area: otsikko;
+}
+
+.iskulause {
+  grid-area: iskulause;
+}
+
 .hahmo {
-  display: none;
+  grid-area: hahmo;
 }
 
 .hahmo img {
@@ -203,11 +215,10 @@ main {
 
 @container (min-width: 40rem) {
   .ylaosa-sisalto {
-    grid-template-columns: 1fr clamp(9rem, 28%, 13rem);
-  }
-
-  .hahmo {
-    display: block;
+    grid-template-columns: 1fr minmax(6rem, 15rem);
+    grid-template-areas:
+      "otsikko   hahmo"
+      "iskulause hahmo";
   }
 }
 
@@ -612,6 +623,30 @@ body {
 
     html {
         scroll-padding-block-end: var(--vali-m);
+    }
+}
+
+/* Matala mutta leveä näkymä (puhelin vaakatasossa): palkki pystyyn oikeaan reunaan.
+   16rem = viiden napin ja välien korkeus, jotta pystypalkki mahtuu näkymään. */
+@media (max-height: 25rem) and (min-height: 16rem) and (min-width: 40rem) {
+    .edistyminen {
+        position: fixed;
+        inset-block: 0;
+        inset-inline: auto 0;
+        display: grid;
+        align-content: center;
+        border-block: 0;
+        border-inline-start: 1px solid var(--vari-reuna);
+        box-shadow: var(--varjo);
+    }
+
+    .edistyminen ol {
+        flex-direction: column;
+        padding: var(--vali-s);
+    }
+
+    body {
+        padding-inline-end: var(--palkin-korkeus);
     }
 }
 
