@@ -47,7 +47,7 @@
     --fontti-pieni: 0.875rem;
     --fontti-perus: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
     --fontti-h2: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
-    --fontti-h1: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+    --fontti-h1: clamp(2.5rem, 1.5rem + 5vw, 5rem);
     --rivivali: 1.5;
     --rivivali-otsikko: 1.2;
 
@@ -64,11 +64,18 @@
 }
 
 body {
-    background-color: var(--vari-tausta);
-    color: var(--vari-teksti);
-    font-family: var(--fontti);
-    font-size: var(--fontti-perus);
-    line-height: var(--rivivali);
+  background-color: var(--vari-tausta);
+  background-image:
+    linear-gradient(to bottom, transparent, var(--vari-tausta) 32rem),
+    repeating-radial-gradient(
+      circle at 100% 0,
+      transparent 0 0.75rem,
+      var(--vari-reuna) 0.75rem calc(0.75rem + 1px)
+    );
+  color: var(--vari-teksti);
+  font-family: var(--fontti);
+  font-size: var(--fontti-perus);
+  line-height: var(--rivivali);
 }
 
 /* ===== PERUSTA ===== */
@@ -90,7 +97,19 @@ h2 {
 }
 
 h1 {
-    font-size: var(--fontti-h1);
+  font-size: var(--fontti-h1);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.iskulause {
+  margin-block: var(--vali-s) var(--vali-l);
+  font-size: var(--fontti-h2);
+  line-height: var(--rivivali-otsikko);
+  color: var(--vari-korostus);
+  text-wrap: balance;
 }
 
 h2 {
@@ -247,40 +266,40 @@ main {
 /* ===== NAPIT ===== */
 
 .nappi {
-  font: inherit;
-  font-weight: 600;
-  padding: var(--vali-s) var(--vali-m);
-  color: var(--vari-korostus);
-  background-color: transparent;
-  border: 2px solid var(--vari-korostus);
-  border-radius: var(--pyoristys-pyorea);
-  cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    padding: var(--vali-s) var(--vali-m);
+    color: var(--vari-korostus);
+    background-color: transparent;
+    border: 2px solid var(--vari-korostus);
+    border-radius: var(--pyoristys-pyorea);
+    cursor: pointer;
 }
 
 .nappi:hover {
-  color: var(--vari-korostus-teksti);
-  background-color: var(--vari-korostus);
+    color: var(--vari-korostus-teksti);
+    background-color: var(--vari-korostus);
 }
 
 .nappi-ensisijainen {
-  color: var(--vari-korostus-teksti);
-  background-color: var(--vari-korostus);
+    color: var(--vari-korostus-teksti);
+    background-color: var(--vari-korostus);
 }
 
 .nappi-ensisijainen:hover {
-  color: var(--vari-korostus);
-  background-color: transparent;
+    color: var(--vari-korostus);
+    background-color: transparent;
 }
 
 .nappi-vaarallinen {
-  color: var(--vari-pinta);
-  background-color: var(--vari-virhe);
-  border-color: var(--vari-virhe);
+    color: var(--vari-pinta);
+    background-color: var(--vari-virhe);
+    border-color: var(--vari-virhe);
 }
 
 .nappi-vaarallinen:hover {
-  color: var(--vari-virhe);
-  background-color: transparent;
+    color: var(--vari-virhe);
+    background-color: transparent;
 }
 
 .aloita-alusta-alue {
@@ -313,95 +332,95 @@ main {
 /* ===== VAHVISTUSDIALOGI ===== */
 
 .vahvistus {
-  max-width: min(100% - 2 * var(--vali-m), 26rem);
-  padding: var(--vali-l);
-  color: var(--vari-teksti);
-  background-color: var(--vari-pinta);
-  border: 1px solid var(--vari-reuna);
-  border-radius: var(--pyoristys-m);
-  box-shadow: var(--varjo);
+    max-width: min(100% - 2 * var(--vali-m), 26rem);
+    padding: var(--vali-l);
+    color: var(--vari-teksti);
+    background-color: var(--vari-pinta);
+    border: 1px solid var(--vari-reuna);
+    border-radius: var(--pyoristys-m);
+    box-shadow: var(--varjo);
 }
 
 .vahvistus::backdrop {
-  background-color: rgb(0 0 0 / 0.6);
+    background-color: rgb(0 0 0 / 0.6);
 }
 
 .vahvistus-napit {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: var(--vali-s);
-  margin-top: var(--vali-l);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--vali-s);
+    margin-top: var(--vali-l);
 }
 
 /* ===== LOMAKE ===== */
 
 .viestilomake {
-  display: grid;
-  gap: var(--vali-l);
+    display: grid;
+    gap: var(--vali-l);
 }
 
 .kentta {
-  display: grid;
-  gap: var(--vali-xs);
+    display: grid;
+    gap: var(--vali-xs);
 }
 
 .kentta label {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .kentta input,
 .kentta textarea {
-  width: 100%;
-  padding: var(--vali-s);
-  font: inherit;
-  color: var(--vari-teksti);
-  background-color: var(--vari-tausta);
-  border: 2px solid var(--vari-reuna-vahva);
-  border-radius: var(--pyoristys-s);
+    width: 100%;
+    padding: var(--vali-s);
+    font: inherit;
+    color: var(--vari-teksti);
+    background-color: var(--vari-tausta);
+    border: 2px solid var(--vari-reuna-vahva);
+    border-radius: var(--pyoristys-s);
 }
 
 .kentta input:hover,
 .kentta textarea:hover {
-  border-color: var(--vari-korostus);
+    border-color: var(--vari-korostus);
 }
 
 .kentta input:user-invalid,
 .kentta textarea:user-invalid {
-  border-color: var(--vari-virhe);
-  border-style: dashed;
+    border-color: var(--vari-virhe);
+    border-style: dashed;
 }
 
 .kentta textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 /* Valmis viesti: luettavissa, ei muokattavissa */
 .kentta textarea[readonly] {
-  border-style: dotted;
-  cursor: default;
+    border-style: dotted;
+    cursor: default;
 }
 
 .kopiointi-tila {
-  font-size: var(--fontti-pieni);
+    font-size: var(--fontti-pieni);
 }
 
 /* Pitch-esimerkki */
 .esimerkki {
-  padding: var(--vali-m);
-  background-color: var(--vari-tausta);
-  border-radius: var(--pyoristys-s);
+    padding: var(--vali-m);
+    background-color: var(--vari-tausta);
+    border-radius: var(--pyoristys-s);
 }
 
 .esimerkki figcaption {
-  margin-bottom: var(--vali-xs);
-  font-size: var(--fontti-pieni);
-  font-weight: 600;
+    margin-bottom: var(--vali-xs);
+    font-size: var(--fontti-pieni);
+    font-weight: 600;
 }
 
 .esimerkki blockquote {
-  margin: 0;
-  font-style: italic;
+    margin: 0;
+    font-style: italic;
 }
 
 /* Footerissa selite napin yläpuolelle, ettei se jää sivun reunan tai alapalkin alle */
@@ -479,150 +498,150 @@ input[type="checkbox"]:indeterminate::before {
 /* ===== ALAPALKKI ===== */
 
 :root {
-  --palkin-korkeus: calc(2.5rem + 2 * var(--vali-s));
+    --palkin-korkeus: calc(2.5rem + 2 * var(--vali-s));
 }
 
 html {
-  scroll-padding-block: var(--vali-m) calc(var(--palkin-korkeus) + var(--vali-m));
+    scroll-padding-block: var(--vali-m) calc(var(--palkin-korkeus) + var(--vali-m));
 }
 
 body {
-  padding-block-end: var(--palkin-korkeus);
+    padding-block-end: var(--palkin-korkeus);
 }
 
 .edistyminen {
-  position: fixed;
-  inset-inline: 0;
-  inset-block-end: 0;
-  z-index: 2;
-  background-color: var(--vari-pinta);
-  border-block-start: 1px solid var(--vari-reuna);
-  box-shadow: var(--varjo);
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 2;
+    background-color: var(--vari-pinta);
+    border-block-start: 1px solid var(--vari-reuna);
+    box-shadow: var(--varjo);
 }
 
 .edistyminen ol {
-  display: flex;
-  justify-content: center;
-  gap: var(--vali-s);
-  margin: 0;
-  padding: var(--vali-s) var(--vali-m);
-  list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--vali-s);
+    margin: 0;
+    padding: var(--vali-s) var(--vali-m);
+    list-style: none;
 }
 
 .edistyminen a {
-  display: grid;
-  place-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-weight: 700;
-  color: var(--vari-teksti);
-  text-decoration: none;
-  border: 2px solid var(--vari-reuna-vahva);
-  border-radius: var(--pyoristys-pyorea);
+    display: grid;
+    place-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-weight: 700;
+    color: var(--vari-teksti);
+    text-decoration: none;
+    border: 2px solid var(--vari-reuna-vahva);
+    border-radius: var(--pyoristys-pyorea);
 }
 
 .edistyminen a:hover {
-  border-color: var(--vari-korostus);
+    border-color: var(--vari-korostus);
 }
 
 .edistyminen .valinnainen a {
-  border-style: dashed;
+    border-style: dashed;
 }
 
 /* JS lisää luokan tehty, kun vaihe on valmis */
 .edistyminen a.tehty {
-  color: var(--vari-pinta);
-  background-color: var(--vari-tehty);
-  border-color: var(--vari-tehty);
+    color: var(--vari-pinta);
+    background-color: var(--vari-tehty);
+    border-color: var(--vari-tehty);
 }
 
 /* Lyhyt näkymä (suuri zoom, puhelin vaakatasossa): palkki tavalliseksi navigaatioksi */
 @media (max-height: 25rem) {
-  .edistyminen {
-    position: static;
-    border-block: 1px solid var(--vari-reuna);
-    box-shadow: none;
-  }
+    .edistyminen {
+        position: static;
+        border-block: 1px solid var(--vari-reuna);
+        box-shadow: none;
+    }
 
-  body {
-    padding-block-end: 0;
-  }
+    body {
+        padding-block-end: 0;
+    }
 
-  html {
-    scroll-padding-block-end: var(--vali-m);
-  }
+    html {
+        scroll-padding-block-end: var(--vali-m);
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 /* ===== VALINNAISET VAIHEET ===== */
 
 .valinnaiset summary {
-  padding: var(--vali-m) var(--vali-l);
-  font-weight: 700;
-  background-color: var(--vari-pinta);
-  border: 1px dashed var(--vari-reuna-vahva);
-  border-radius: var(--pyoristys-m);
-  cursor: pointer;
+    padding: var(--vali-m) var(--vali-l);
+    font-weight: 700;
+    background-color: var(--vari-pinta);
+    border: 1px dashed var(--vari-reuna-vahva);
+    border-radius: var(--pyoristys-m);
+    cursor: pointer;
 }
 
 .valinnaiset summary:hover {
-  border-color: var(--vari-korostus);
+    border-color: var(--vari-korostus);
 }
 
-.valinnaiset > :not(summary) {
-  margin-block-start: var(--vali-l);
+.valinnaiset> :not(summary) {
+    margin-block-start: var(--vali-l);
 }
 
 /* ===== ONNITTELUT ===== */
 
 .onnittelu {
-  padding: var(--vali-l);
-  text-align: center;
-  background-color: var(--vari-pinta);
-  border: 2px solid var(--vari-valinnainen);
-  border-radius: var(--pyoristys-m);
+    padding: var(--vali-l);
+    text-align: center;
+    background-color: var(--vari-pinta);
+    border: 2px solid var(--vari-valinnainen);
+    border-radius: var(--pyoristys-m);
 }
 
 .onnittelu h2 {
-  color: var(--vari-valinnainen);
+    color: var(--vari-valinnainen);
 }
 
 .onnittelu p {
-  margin: 0;
+    margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .onnittelu {
-    animation: ilmesty 600ms ease-out;
-  }
+    .onnittelu {
+        animation: ilmesty 600ms ease-out;
+    }
 }
 
 @keyframes ilmesty {
-  from {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
 
-  to {
-    opacity: 1;
-    transform: none;
-  }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* ===== FOOTER ===== */
 
 .sivun-alaosa {
-  display: grid;
-  gap: var(--vali-m);
-  justify-items: start;
+    display: grid;
+    gap: var(--vali-m);
+    justify-items: start;
 }
 
 .sivun-alaosa p {
-  margin: 0;
-  font-size: var(--fontti-pieni);
+    margin: 0;
+    font-size: var(--fontti-pieni);
 }
