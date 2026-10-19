@@ -186,3 +186,58 @@ kopioiNappi.addEventListener('click', function () {
       kopiointiTila.textContent = 'Automaattinen kopiointi ei onnistunut. Viesti on valittuna, kopioi se käsin.';
     });
 });
+
+// ===== KÄYNNISTYS =====
+
+// ===== VALINNAISET VAIHEET =====
+
+const valinnaiset = document.querySelector('.valinnaiset');
+const valinnaisetLinkit = document.querySelectorAll('a[href="#vaihe-4"], a[href="#vaihe-5"]');
+
+// Linkki Teostoon tai Gramexiin avaa ensin suljetun osion
+valinnaisetLinkit.forEach(function (linkki) {
+  linkki.addEventListener('click', function () {
+    valinnaiset.open = true;
+  });
+});
+
+
+// ===== ALOITA ALUSTA =====
+
+const dialogi = document.querySelector('#vahvistus');
+const aloitaAlustaNapit = document.querySelectorAll('.aloita-alusta');
+const paaotsikko = document.querySelector('h1');
+
+aloitaAlustaNapit.forEach(function (nappi) {
+  nappi.addEventListener('click', function () {
+    dialogi.returnValue = '';
+    dialogi.showModal();
+  });
+});
+
+dialogi.addEventListener('close', function () {
+  if (dialogi.returnValue === 'tyhjenna') {
+    tyhjennaKaikki();
+  }
+});
+
+function tyhjennaKaikki() {
+  tehtavat.forEach(function (checkbox) {
+    checkbox.checked = false;
+    tila[checkbox.id] = false;
+  });
+
+  kentat.forEach(function (kentta) {
+    kentta.value = '';
+    tila[kentta.id] = '';
+  });
+
+  tallennaTila(tila);
+  kokoaViesti();
+  kopiointiTila.textContent = '';
+  valinnaiset.open = false;
+  paivitaKaikki(false);
+
+  ilmoitus.textContent = 'Kaikki merkinnät tyhjennetty. Voit aloittaa uuden julkaisun.';
+  paaotsikko.focus();
+}
