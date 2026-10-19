@@ -78,7 +78,6 @@ kortit.forEach(function (kortti) {
 const valivaihe = document.querySelector('#valivaihe');
 const valmis = document.querySelector('#valmis');
 const ilmoitus = document.querySelector('#tila-ilmoitus');
-const viestiLahetetty = document.querySelector('#vaihe-2-lahetetty');
 
 function naytaOnnittelu(osio, nayta, ilmoita) {
   const oliPiilossa = osio.hidden;
@@ -95,17 +94,16 @@ function naytaOnnittelu(osio, nayta, ilmoita) {
 // ===== KAIKEN PÄIVITYS =====
 
 function paivitaKaikki(ilmoita) {
-  let pakollisetValmiina = true;
+  const valmiit = {};
 
   kortit.forEach(function (kortti) {
-    const korttiValmis = paivitaKortti(kortti);
-
-    if (!kortti.classList.contains('valinnainen') && !korttiValmis) {
-      pakollisetValmiina = false;
-    }
+    valmiit[kortti.id] = paivitaKortti(kortti);
   });
 
-  naytaOnnittelu(valivaihe, viestiLahetetty.checked && !pakollisetValmiina, ilmoita);
+  const viestiValmis = valmiit['vaihe-1'] && valmiit['vaihe-2'];
+  const pakollisetValmiina = viestiValmis && valmiit['vaihe-3'];
+
+  naytaOnnittelu(valivaihe, viestiValmis && !pakollisetValmiina, ilmoita);
   naytaOnnittelu(valmis, pakollisetValmiina, ilmoita);
 }
 
