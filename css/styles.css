@@ -183,6 +183,9 @@ main {
 
 .sivun-ylaosa {
   container-type: inline-size;
+}
+
+.ylaosa-sisalto {
   display: grid;
   gap: var(--vali-l);
   align-items: center;
@@ -199,7 +202,7 @@ main {
 }
 
 @container (min-width: 40rem) {
-  .sivun-ylaosa {
+  .ylaosa-sisalto {
     grid-template-columns: 1fr clamp(9rem, 28%, 13rem);
   }
 
