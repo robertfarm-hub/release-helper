@@ -105,11 +105,22 @@ h1 {
 }
 
 .iskulause {
+  width: fit-content;
   margin-block: var(--vali-s) var(--vali-l);
   font-size: var(--fontti-h2);
+  font-weight: 700;
   line-height: var(--rivivali-otsikko);
-  color: var(--vari-korostus);
   text-wrap: balance;
+  color: var(--vari-korostus);
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .iskulause {
+    background-image: linear-gradient(90deg, var(--vari-korostus), var(--vari-tehty));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 h2 {
