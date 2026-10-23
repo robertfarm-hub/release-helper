@@ -127,6 +127,7 @@ function kokoaViesti() {
   const rivit = [
     'Artisti: ' + arvo('viesti-artisti'),
     'Kappaleen nimi: ' + arvo('viesti-kappale'),
+    'Minuutin kohta: ' + arvo('viesti-minuutti'),
     '',
     'Äänityspaikka: ' + arvo('viesti-paikka'),
     'Äänittäjä: ' + arvo('viesti-aanittaja'),
@@ -138,8 +139,8 @@ function kokoaViesti() {
   ];
 
   // Valinnaiset kentät vain, jos ne on täytetty
-  if (arvo('viesti-esiintyjat') !== '') {
-    rivit.push('Muut esiintyjät: ' + arvo('viesti-esiintyjat'));
+  if (arvo('viesti-osallistujat') !== '') {
+    rivit.push('Muut osallistujat: ' + arvo('viesti-osallistujat'));
   }
 
   if (arvo('viesti-toive') !== '') {
@@ -158,6 +159,7 @@ kentat.forEach(function (kentta) {
   }
 
   kentta.addEventListener('input', function () {
+    kentta.setCustomValidity('');
     tila[kentta.id] = kentta.value;
     tallennaTila(tila);
     kokoaViesti();
@@ -166,12 +168,26 @@ kentat.forEach(function (kentta) {
 
 kokoaViesti();
 
+// Omat virheilmoitukset väärin muotoilluille kentille (data-virhe).
+// Tyhjästä pakollisesta kentästä selain kertoo itse.
+function asetaVirheilmoitukset() {
+  kentat.forEach(function (kentta) {
+    kentta.setCustomValidity('');
+
+    const vaaraMuoto = kentta.validity.typeMismatch || kentta.validity.patternMismatch;
+
+    if (vaaraMuoto && kentta.dataset.virhe) {
+      kentta.setCustomValidity(kentta.dataset.virhe);
+    }
+  });
+}
+
 // Kopiointi
 kopioiNappi.addEventListener('click', function () {
+  asetaVirheilmoitukset();
+  lomake.classList.add('tarkistettu');
+
   if (!lomake.reportValidity()) {
-    kopiointiTila.textContent = 'Täytä puuttuvat kentät ennen kopiointia.';
-    return;
-  }
 
   navigator.clipboard.writeText(valmisViesti.value)
     .then(function () {
@@ -229,8 +245,11 @@ function tyhjennaKaikki() {
 
   kentat.forEach(function (kentta) {
     kentta.value = '';
+    kentta.setCustomValidity('');
     tila[kentta.id] = '';
   });
+
+  lomake.classList.remove('tarkistettu');
 
   tallennaTila(tila);
   kokoaViesti();

@@ -431,8 +431,9 @@ main {
     border-color: var(--vari-korostus);
 }
 
-.kentta input:user-invalid,
-.kentta textarea:user-invalid {
+/* Virhetila näkyy vasta, kun viestiä on yritetty kopioida */
+.tarkistettu .kentta input:invalid,
+.tarkistettu .kentta textarea:invalid {
     border-color: var(--vari-virhe);
     border-style: dashed;
 }

@@ -83,14 +83,12 @@
 
       <fieldset>
         <legend>Äänitiedostot</legend>
-        <p class="ohje">Kaikki kolme tiedostoa WAV-muodossa, 44,1 kHz / 16-bit. Tarkista muoto ohjelmasi
+        <p class="ohje">Molemmat tiedostot WAV-muodossa, 44,1 kHz / 16-bit. Tarkista muoto ohjelmasi
           vientiasetuksista ennen renderöintiä.</p>
         <ul class="ohjeet">
           <li><strong>Master</strong></li>
           <li><strong>TikTok-klippi</strong>, enintään 29 s. Julkaistaan TikTokissa viikko ennen julkaisua. Maistiainen
             kappaleesta, yleensä kertosäe.</li>
-          <li><strong>Minuutin klippi</strong>. Julkaistaan kappaleen yhteydessä. Valitse kohta, joka on kappaleen
-            kohokohta tai jossa sen ajatus tiivistyy parhaiten.</li>
         </ul>
         <ul class="tehtavat">
           <li>
@@ -104,10 +102,6 @@
           <li>
             <input type="checkbox" id="vaihe-1-tiktok">
             <label for="vaihe-1-tiktok">TikTok-klippi on kansiossa</label>
-          </li>
-          <li>
-            <input type="checkbox" id="vaihe-1-minuutti">
-            <label for="vaihe-1-minuutti">Minuutin klippi on kansiossa</label>
           </li>
         </ul>
       </fieldset>
@@ -170,7 +164,8 @@
           <legend>Materiaali</legend>
           <div class="kentta">
             <label for="viesti-linkki">Drive-linkki</label>
-            <input type="url" id="viesti-linkki" required aria-describedby="ohje-linkki">
+            <input type="url" id="viesti-linkki" required aria-describedby="ohje-linkki"
+              data-virhe="Linkin pitää alkaa https://, esimerkiksi https://drive.google.com/…">
             <p class="ohje" id="ohje-linkki">Liitä vaiheessa 1 kopioimasi linkki.</p>
           </div>
         </fieldset>
@@ -186,6 +181,13 @@
           <div class="kentta">
             <label for="viesti-kappale">Kappaleen nimi</label>
             <input type="text" id="viesti-kappale" required>
+          </div>
+          <div class="kentta">
+            <label for="viesti-minuutti">Minuutin kohta</label>
+            <input type="text" id="viesti-minuutti" required pattern="[0-9]{2}:[0-9]{2}-[0-9]{2}:[0-9]{2}"
+              aria-describedby="ohje-minuutti" data-virhe="Kirjoita kohta muodossa 03:50-04:50.">
+            <p class="ohje" id="ohje-minuutti">Minuutin mittainen kohta kappaleesta muodossa 03:50-04:50. Valitse
+              kohokohta tai kohta, jossa kappaleen ajatus tiivistyy parhaiten.</p>
           </div>
         </fieldset>
 
@@ -221,9 +223,9 @@
             <input type="text" id="viesti-masterointi" required>
           </div>
           <div class="kentta">
-            <label for="viesti-esiintyjat">Muut esiintyjät tai osallistujat (valinnainen)</label>
-            <input type="text" id="viesti-esiintyjat" aria-describedby="ohje-esiintyjat">
-            <p class="ohje" id="ohje-esiintyjat">Esimerkiksi taustalaulu, soittajat tai sovittaja.</p>
+            <label for="viesti-osallistujat">Muut osallistujat (valinnainen)</label>
+            <input type="text" id="viesti-osallistujat" aria-describedby="ohje-osallistujat">
+            <p class="ohje" id="ohje-osallistujat">Muodossa rooli: nimi, esimerkiksi Taustalaulu: Nimi, Kitara: Nimi.</p>
           </div>
         </fieldset>
 
