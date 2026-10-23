@@ -188,6 +188,9 @@ kopioiNappi.addEventListener('click', function () {
   lomake.classList.add('tarkistettu');
 
   if (!lomake.reportValidity()) {
+    kopiointiTila.textContent = 'Täytä puuttuvat kentät ennen kopiointia.';
+    return;
+  }
 
   navigator.clipboard.writeText(valmisViesti.value)
     .then(function () {
