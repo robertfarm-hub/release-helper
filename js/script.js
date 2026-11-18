@@ -224,6 +224,26 @@ kopioiNappi.addEventListener('click', function () {
     });
 });
 
+// Pitch-tekstin kopiointi vaiheessa 3
+const kopioiPitchNappi = document.querySelector('.kopioi-pitch');
+const pitchIlmoitus = document.querySelector('#pitch-kopiointi-tila');
+
+kopioiPitchNappi.addEventListener('click', function () {
+  if (pitchKopio.value === '') {
+    pitchIlmoitus.textContent = 'Pitch-teksti puuttuu. Kirjoita se ensin vaiheessa 2.';
+    return;
+  }
+
+  navigator.clipboard.writeText(pitchKopio.value)
+    .then(function () {
+      pitchIlmoitus.textContent = 'Pitch-teksti kopioitu. Liitä se Spotify for Artistsin tekstikenttään.';
+    })
+    .catch(function () {
+      pitchKopio.select();
+      pitchIlmoitus.textContent = 'Automaattinen kopiointi ei onnistunut. Teksti on valittuna, kopioi se käsin.';
+    });
+});
+
 // ===== VALINNAISET VAIHEET =====
 
 const valinnaiset = document.querySelector('.valinnaiset');
