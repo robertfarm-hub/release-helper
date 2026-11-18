@@ -5,6 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Julkaisuapuri artistille – kappaleen julkaisu vaihe vaiheelta</title>
+  <meta name="description"
+    content="Opas artistille, joka julkaisee kappaleen yhteyshenkilön kautta: materiaalit, valmis viesti, Spotify-pitch sekä Teosto ja Gramex. Merkinnät tallentuvat vain omaan selaimeesi.">
+
+  <!-- Välilehden kuvake ja kotinäytön kuvake -->
+  <link rel="icon" href="kuvat/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="kuvat/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="kuvat/apple-touch-icon.png">
+
+  <!-- Esikatselukortti, kun linkki jaetaan (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:title" content="Julkaisuapuri artistille">
+  <meta property="og:description"
+    content="Vie biisisi julkaisuvalmiiksi vaihe kerrallaan: materiaalit, viesti yhteyshenkilölle, Spotify-pitch sekä Teosto ja Gramex.">
+  <meta property="og:url" content="https://robertfarm-hub.github.io/release-helper/">
+  <meta property="og:image" content="https://robertfarm-hub.github.io/release-helper/kuvat/og-kuva.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"
+    content="Julkaisuapuri artistille – Vie biisisi julkaisuvalmiiksi vaihe kerrallaan! Vinyylipäinen hahmo pitää mikrofonia ja tehtävälistaa.">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/script.js" defer></script>
 </head>
@@ -86,7 +108,7 @@
         <p class="ohje">Molemmat tiedostot WAV-muodossa, 44,1 kHz / 16-bit. Tarkista muoto ohjelmasi
           vientiasetuksista ennen renderöintiä.</p>
         <ul class="ohjeet">
-          <li><strong>Master</strong></li>
+          <li><strong>Master</strong>, kappaleen valmis, miksattu ja masteroitu versio. Tämä tiedosto julkaistaan.</li>
           <li><strong>TikTok-klippi</strong>, enintään 29 s. Julkaistaan TikTokissa viikko ennen julkaisua. Maistiainen
             kappaleesta, yleensä kertosäe.</li>
         </ul>
@@ -187,7 +209,8 @@
             <input type="text" id="viesti-minuutti" required pattern="[0-9]{2}:[0-9]{2}-[0-9]{2}:[0-9]{2}"
               aria-describedby="ohje-minuutti" data-virhe="Kirjoita kohta muodossa 03:50-04:50.">
             <p class="ohje" id="ohje-minuutti">Minuutin mittainen kohta kappaleesta muodossa 02:50-03:50. Valitse
-              kohokohta tai kohta, jossa kappaleen ajatus tiivistyy parhaiten. Tämä kohta tulee TikTokkiin julkaisun jälkeen.</p>
+              kohokohta tai kohta, jossa kappaleen ajatus tiivistyy parhaiten. Tämä kohta tulee TikTokkiin julkaisun
+              jälkeen.</p>
           </div>
         </fieldset>
 
@@ -226,7 +249,8 @@
           <div class="kentta">
             <label for="viesti-osallistujat">Muut osallistujat (valinnainen)</label>
             <input type="text" id="viesti-osallistujat" aria-describedby="ohje-osallistujat">
-            <p class="ohje" id="ohje-osallistujat">Muodossa rooli: nimi, esimerkiksi Taustalaulu: Nimi, Kitara: Nimi.</p>
+            <p class="ohje" id="ohje-osallistujat">Muodossa rooli: nimi, esimerkiksi Taustalaulu: Nimi, Kitara: Nimi.
+            </p>
           </div>
         </fieldset>
 

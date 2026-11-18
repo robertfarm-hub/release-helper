@@ -206,8 +206,6 @@ kopioiNappi.addEventListener('click', function () {
     });
 });
 
-// ===== KÄYNNISTYS =====
-
 // ===== VALINNAISET VAIHEET =====
 
 const valinnaiset = document.querySelector('.valinnaiset');
