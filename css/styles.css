@@ -14,6 +14,7 @@
     --vari-reuna: #303741;
     --vari-reuna-vahva: #68707E;
     --vari-virhe: #D9958C;
+    --vari-kuvio: #303741;
 }
 
 /* Vaalea teema */
@@ -29,6 +30,7 @@
         --vari-reuna: #BEB199;
         --vari-reuna-vahva: #68707E;
         --vari-virhe: #9E3B33;
+        --vari-kuvio: color-mix(in srgb, #BEB199 50%, white);
     }
 }
 
@@ -64,18 +66,16 @@
 }
 
 body {
-  background-color: var(--vari-tausta);
-  background-image:
-    linear-gradient(to bottom, transparent, var(--vari-tausta) 32rem),
-    repeating-radial-gradient(
-      circle at 100% 0,
-      transparent 0 0.75rem,
-      var(--vari-reuna) 0.75rem calc(0.75rem + 1px)
-    );
-  color: var(--vari-teksti);
-  font-family: var(--fontti);
-  font-size: var(--fontti-perus);
-  line-height: var(--rivivali);
+    background-color: var(--vari-tausta);
+    background-image:
+        linear-gradient(to bottom, transparent, var(--vari-tausta) 32rem),
+        repeating-radial-gradient(circle at 100% 0,
+            transparent 0 0.75rem,
+            var(--vari-kuvio) 0.75rem calc(0.75rem + 1px));
+    color: var(--vari-teksti);
+    font-family: var(--fontti);
+    font-size: var(--fontti-perus);
+    line-height: var(--rivivali);
 }
 
 /* ===== PERUSTA ===== */
@@ -97,30 +97,30 @@ h2 {
 }
 
 h1 {
-  font-size: var(--fontti-h1);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
+    font-size: var(--fontti-h1);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
 }
 
 .iskulause {
-  width: fit-content;
-  margin-block: var(--vali-s) var(--vali-l);
-  font-size: var(--fontti-h2);
-  font-weight: 700;
-  line-height: var(--rivivali-otsikko);
-  text-wrap: balance;
-  color: var(--vari-korostus);
+    width: fit-content;
+    margin-block: var(--vali-s) var(--vali-l);
+    font-size: var(--fontti-h2);
+    font-weight: 700;
+    line-height: var(--rivivali-otsikko);
+    text-wrap: balance;
+    color: var(--vari-korostus);
 }
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
-  .iskulause {
-    background-image: linear-gradient(90deg, var(--vari-korostus), var(--vari-tehty));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+    .iskulause {
+        background-image: linear-gradient(90deg, var(--vari-korostus), var(--vari-tehty));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 }
 
 h2 {
@@ -182,36 +182,36 @@ main {
 /* ===== HAHMO ===== */
 
 .sivun-ylaosa {
-  container-type: inline-size;
+    container-type: inline-size;
 }
 
 .ylaosa-sisalto {
-  display: grid;
-  grid-template-columns: 1fr minmax(0, min(30%, 45vh));
-  grid-template-areas:
-    "otsikko   hahmo"
-    "iskulause hahmo";
-  column-gap: var(--vali-m);
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, min(30%, 45vh));
+    grid-template-areas:
+        "otsikko   hahmo"
+        "iskulause hahmo";
+    column-gap: var(--vali-m);
+    align-items: center;
 }
 
 .ylaosa-sisalto h1 {
-  grid-area: otsikko;
+    grid-area: otsikko;
 }
 
 .iskulause {
-  grid-area: iskulause;
-  font-size: max(var(--fontti-perus), 3.25cqi);
+    grid-area: iskulause;
+    font-size: max(var(--fontti-perus), 3.25cqi);
 }
 
 .hahmo {
-  grid-area: hahmo;
+    grid-area: hahmo;
 }
 
 .hahmo img {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* ===== KORTIT ===== */

@@ -195,7 +195,8 @@
           <legend>Äänitys</legend>
           <div class="kentta">
             <label for="viesti-paikka">Äänityspaikka</label>
-            <input type="text" id="viesti-paikka" required>
+            <input type="text" id="viesti-paikka" required aria-describedby="ohje-paikka">
+            <p class="ohje" id="ohje-paikka">Tarkkaa osoitetta ei tarvita. Vastaukseksi riittää "Studio".</p>
           </div>
           <div class="kentta">
             <label for="viesti-aanittaja">Äänittäjä</label>
@@ -301,8 +302,8 @@
         <label for="vaihe-3-kaikki">Kaikki tehty</label>
       </header>
 
-      <p>Kun levy-yhtiö on toimittanut kappaleen Spotifyyn, se ilmestyy Spotify for Artistsiin, yleensä noin viikko
-        ennen julkaisua. Tarkista tilanne jo hieman ennen sitä ja pitchaa kappale heti, kun se näkyy.</p>
+      <p>Kun levy-yhtiö on toimittanut kappaleen Spotifyyn, se ilmestyy Spotify for Artistsiin. Pitchaa kappale heti,
+        kun se näkyy, ja viimeistään viikkoa ennen julkaisua.</p>
 
       <fieldset>
         <legend>Kappaleen löytäminen</legend>
@@ -311,7 +312,8 @@
               Artistsiin<span class="piilotettu"> (avautuu uuteen välilehteen)</span></a></li>
           <li>Valitse <strong>Music</strong> → <strong>Upcoming</strong></li>
         </ol>
-        <p class="huomio">Jos kappale ei vielä näy, odota ja tarkista uudelleen seuraavana päivänä.</p>
+        <p class="huomio">Jos kappale ei vielä näy, odota ja tarkista uudelleen seuraavana päivänä. Jos se ei näy vielä
+          kymmenen päivää ennen julkaisua, ota yhteyttä yhteyshenkilöösi.</p>
         <ul class="tehtavat">
           <li>
             <input type="checkbox" id="vaihe-3-nakyy">
