@@ -293,6 +293,7 @@ function tyhjennaKaikki() {
   tallennaTila(tila);
   kokoaViesti();
   kopiointiTila.textContent = '';
+  pitchIlmoitus.textContent = '';
   valinnaiset.open = false;
   paivitaKaikki(false);
 
