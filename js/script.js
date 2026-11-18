@@ -156,20 +156,6 @@ function kokoaViesti() {
   pitchKopio.value = arvo('viesti-pitch');
 }
 
-  // Valinnaiset kentät vain, jos ne on täytetty
-  if (arvo('viesti-osallistujat') !== '') {
-    rivit.push('Muut osallistujat: ' + arvo('viesti-osallistujat'));
-  }
-
-  if (arvo('viesti-toive') !== '') {
-    rivit.push('Toive julkaisupäivästä: ' + arvo('viesti-toive'));
-  }
-
-  rivit.push('', 'Pitch-teksti:', arvo('viesti-pitch'), '', 'Materiaali: ' + arvo('viesti-linkki'));
-
-  valmisViesti.value = rivit.join('\n');
-}
-
 // Kenttien palautus ja tallennus
 kentat.forEach(function (kentta) {
   if (tila[kentta.id] !== undefined) {
