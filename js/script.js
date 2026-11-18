@@ -118,6 +118,7 @@ const valmisViesti = document.querySelector('#valmis-viesti');
 const kopioiNappi = document.querySelector('.kopioi-viesti');
 const kopiointiTila = document.querySelector('.kopiointi-tila');
 const viestiKopioitu = document.querySelector('#vaihe-2-kopioitu');
+const pitchKopio = document.querySelector('#pitch-kopio');
 
 function arvo(id) {
   return document.querySelector('#' + id).value.trim();
@@ -137,6 +138,23 @@ function kokoaViesti() {
     'Miksaus: ' + arvo('viesti-miksaus'),
     'Masterointi: ' + arvo('viesti-masterointi')
   ];
+
+  // Valinnaiset kentät vain, jos ne on täytetty
+  if (arvo('viesti-osallistujat') !== '') {
+    rivit.push('Muut osallistujat: ' + arvo('viesti-osallistujat'));
+  }
+
+  if (arvo('viesti-toive') !== '') {
+    rivit.push('Toive julkaisupäivästä: ' + arvo('viesti-toive'));
+  }
+
+  rivit.push('', 'Pitch-teksti:', arvo('viesti-pitch'), '', 'Materiaali: ' + arvo('viesti-linkki'));
+
+  valmisViesti.value = rivit.join('\n');
+
+  // Sama pitch-teksti vaiheeseen 3 kopioitavaksi
+  pitchKopio.value = arvo('viesti-pitch');
+}
 
   // Valinnaiset kentät vain, jos ne on täytetty
   if (arvo('viesti-osallistujat') !== '') {

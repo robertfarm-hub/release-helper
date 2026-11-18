@@ -326,8 +326,10 @@
         <label for="vaihe-3-kaikki">Kaikki tehty</label>
       </header>
 
-      <p>Kun levy-yhtiö on toimittanut kappaleen Spotifyyn, se ilmestyy Spotify for Artistsiin. Pitchaa kappale heti,
-        kun se näkyy, ja viimeistään viikkoa ennen julkaisua.</p>
+      <p>Pitchaus tarkoittaa, että esittelet kappaleen Spotifyn editoreille ennen julkaisua lyhyellä tekstillä siitä,
+        millainen kappale on. Editorit valitsevat kappaleita Spotifyn omille soittolistoille. Kun levy-yhtiö on
+        toimittanut kappaleen Spotifyyn, se ilmestyy Spotify for Artistsiin. Pitchaa kappale heti, kun se näkyy, ja
+        viimeistään viikkoa ennen julkaisua.</p>
 
       <fieldset>
         <legend>Kappaleen löytäminen</legend>
@@ -351,9 +353,16 @@
         <ol class="ohjeet">
           <li>Valitse kappale ja paina <strong>Pitch a song</strong></li>
           <li>Valitse kappaletta kuvaavat tiedot, kuten tyylilaji, tunnelma ja soittimet</li>
-          <li>Liitä tekstikenttään <a href="#vaihe-2">vaiheen 2</a> pitch-teksti</li>
+          <li>Kopioi alta pitch-teksti ja liitä se tekstikenttään</li>
           <li>Lähetä pitch</li>
         </ol>
+        <div class="kentta">
+          <label for="pitch-kopio">Pitch-teksti vaiheesta 2</label>
+          <textarea id="pitch-kopio" rows="6" readonly lang="en"
+            placeholder="Kirjoita pitch-teksti ensin vaiheessa 2."></textarea>
+        </div>
+        <button type="button" class="nappi nappi-ensisijainen kopioi-pitch">Kopioi pitch-teksti</button>
+        <p class="kopiointi-tila" id="pitch-kopiointi-tila" role="status"></p>
         <p class="huomio">Pitch on tehtävä viimeistään 7 päivää ennen julkaisua, muuten kappale ei mene seuraajiesi
           Release Radar -soittolistalle. Pitchata voi vain yhtä kappaletta kerrallaan, eikä kappaletta voi pitchata, jos
           olet siinä vain featuring-artistina.</p>
@@ -368,6 +377,7 @@
           </li>
         </ul>
       </fieldset>
+
     </section>
     <section class="onnittelu" id="valmis" aria-labelledby="valmis-otsikko" hidden>
       <h2 id="valmis-otsikko">Onneksi olkoon!</h2>
