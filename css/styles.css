@@ -21,9 +21,9 @@
         --vari-kuvio: #303741;
     }
 
-    /* Vaalea teema */
+    /* Vaalea teema järjestelmän mukaan, ellei käyttäjä ole valinnut tummaa */
     @media (prefers-color-scheme: light) {
-        :root {
+        :root:not([data-teema="tumma"]) {
             --vari-tausta: color-mix(in srgb, #BEB199 25%, white);
             --vari-pinta: color-mix(in srgb, #BEB199 12%, white);
             --vari-teksti: #121B2B;
@@ -36,6 +36,28 @@
             --vari-virhe: #9E3B33;
             --vari-kuvio: color-mix(in srgb, #BEB199 50%, white);
         }
+    }
+
+    /* Vaalea teema käyttäjän valinnasta */
+    :root[data-teema="vaalea"] {
+        color-scheme: light;
+
+        --vari-tausta: color-mix(in srgb, #BEB199 25%, white);
+        --vari-pinta: color-mix(in srgb, #BEB199 12%, white);
+        --vari-teksti: #121B2B;
+        --vari-korostus: #625246;
+        --vari-korostus-teksti: color-mix(in srgb, #BEB199 12%, white);
+        --vari-tehty: #455C59;
+        --vari-valinnainen: #493D27;
+        --vari-reuna: #BEB199;
+        --vari-reuna-vahva: #68707E;
+        --vari-virhe: #9E3B33;
+        --vari-kuvio: color-mix(in srgb, #BEB199 50%, white);
+    }
+
+    /* Tumma teema käyttäjän valinnasta: värit tulevat oletuksesta */
+    :root[data-teema="tumma"] {
+        color-scheme: dark;
     }
 
     /* ===== MITAT JA TYPOGRAFIA ===== */
@@ -393,6 +415,60 @@
     .aloita-alusta-alue:hover .vihje,
     .aloita-alusta:focus-visible+.vihje {
         display: block;
+    }
+
+    /* ===== TOIMINTORIVI JA TEEMAVALINTA ===== */
+
+    /* Aloita alusta ja teemavalinta samalla rivillä, ylä- ja alaosassa */
+    .toiminnot {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: var(--vali-m);
+        justify-self: stretch;
+    }
+
+    .teemavalinta {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: var(--fontti-pieni);
+    }
+
+    .teemavalinta legend {
+        padding: 0;
+        margin-block-end: var(--vali-xs);
+    }
+
+    .teemavalinta-napit {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--vali-xs);
+    }
+
+    .teemavalinta label {
+        padding: var(--vali-xs) var(--vali-m);
+        border: 1px solid var(--vari-reuna-vahva);
+        border-radius: var(--pyoristys-pyorea);
+        cursor: pointer;
+    }
+
+    .teemavalinta label:hover {
+        border-color: var(--vari-korostus);
+    }
+
+    /* Valittu: täytetty, kuten päätoimintonappi */
+    .teemavalinta input:checked+label {
+        background-color: var(--vari-korostus);
+        border-color: var(--vari-korostus);
+        color: var(--vari-korostus-teksti);
+    }
+
+    /* Radio on piilotettu, joten fokuskehys näytetään sen labelissa */
+    .teemavalinta input:focus-visible+label {
+        outline: 3px solid var(--vari-korostus);
+        outline-offset: 2px;
     }
 
     /* ===== VAHVISTUSDIALOGI ===== */

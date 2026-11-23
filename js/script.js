@@ -286,3 +286,47 @@ function tyhjennaKaikki() {
   ilmoitus.textContent = 'Kaikki merkinnät tyhjennetty. Voit aloittaa uuden julkaisun.';
   paaotsikko.focus();
 }
+
+
+
+// ===== TEEMAVALINTA =====
+// TEEMAAVAIN ja asetaTeema() tulevat teema.js:stä, joka ladataan ennen tätä tiedostoa.
+
+const teemaNapit = document.querySelectorAll('.teemavalinta input');
+const hahmonLahde = document.querySelector('.hahmo source');
+
+// <picture> valitsee hahmon vaalean version media-ehdon perusteella.
+// Ehto vaihdetaan valinnan mukaan, muuten kuva seuraisi aina laitteen teemaa.
+const hahmonMedia = {
+  laite: '(prefers-color-scheme: light)',
+  vaalea: 'all',
+  tumma: 'not all'
+};
+
+function naytaValittuTeema(teema) {
+  // Molemmat valikot (ylä- ja alaosa) samaan tilaan
+  teemaNapit.forEach(function (nappi) {
+    nappi.checked = nappi.value === teema;
+  });
+
+  hahmonLahde.media = hahmonMedia[teema];
+}
+
+// Palautus: teema.js on jo asettanut attribuutin, jos teema on tallennettu
+naytaValittuTeema(document.documentElement.dataset.teema ?? 'laite');
+
+// Tallennus: kun valinta muuttuu
+teemaNapit.forEach(function (nappi) {
+  nappi.addEventListener('change', function () {
+    const valittu = nappi.value;
+
+    asetaTeema(valittu);
+    naytaValittuTeema(valittu);
+
+    if (valittu === 'laite') {
+      localStorage.removeItem(TEEMAAVAIN);
+    } else {
+      localStorage.setItem(TEEMAAVAIN, valittu);
+    }
+  });
+});

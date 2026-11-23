@@ -27,6 +27,7 @@
     content="Julkaisuapuri artistille – Vie biisisi julkaisuvalmiiksi vaihe kerrallaan! Vinyylipäinen hahmo pitää mikrofonia ja tehtävälistaa.">
   <meta name="twitter:card" content="summary_large_image">
 
+  <script src="js/teema.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/script.js" defer></script>
 </head>
@@ -49,9 +50,25 @@
       palata sivulle myöhemmin.</p>
     <p class="huomio">Jos avasit sivun Instagramista tai muusta sovelluksesta, avaa se mieluummin "oikeassa" selaimessa
       (kolme pistettä → Avaa selaimessa), jotta merkinnät pysyvät tallessa.</p>
-    <div class="aloita-alusta-alue">
-      <button type="button" class="nappi aloita-alusta" aria-describedby="vihje-ylaosa">Aloita alusta</button>
-      <span class="vihje" id="vihje-ylaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
+    <div class="toiminnot">
+      <div class="aloita-alusta-alue">
+        <button type="button" class="nappi aloita-alusta" aria-describedby="vihje-ylaosa">Aloita alusta</button>
+        <span class="vihje" id="vihje-ylaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
+      </div>
+
+      <fieldset class="teemavalinta">
+        <legend>Teema</legend>
+        <div class="teemavalinta-napit">
+          <input type="radio" name="teema-ylaosa" id="teema-ylaosa-laite" value="laite" class="piilotettu" checked>
+          <label for="teema-ylaosa-laite">Laitteen mukaan</label>
+
+          <input type="radio" name="teema-ylaosa" id="teema-ylaosa-vaalea" value="vaalea" class="piilotettu">
+          <label for="teema-ylaosa-vaalea">Vaalea</label>
+
+          <input type="radio" name="teema-ylaosa" id="teema-ylaosa-tumma" value="tumma" class="piilotettu">
+          <label for="teema-ylaosa-tumma">Tumma</label>
+        </div>
+      </fieldset>
     </div>
 
   </header>
@@ -474,9 +491,25 @@
   </main>
 
   <footer class="sivun-alaosa">
-    <div class="aloita-alusta-alue">
-      <button type="button" class="nappi aloita-alusta" aria-describedby="vihje-alaosa">Aloita alusta</button>
-      <span class="vihje" id="vihje-alaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
+    <div class="toiminnot">
+      <div class="aloita-alusta-alue">
+        <button type="button" class="nappi aloita-alusta" aria-describedby="vihje-alaosa">Aloita alusta</button>
+        <span class="vihje" id="vihje-alaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
+      </div>
+
+      <fieldset class="teemavalinta">
+        <legend>Teema</legend>
+        <div class="teemavalinta-napit">
+          <input type="radio" name="teema-alaosa" id="teema-alaosa-laite" value="laite" class="piilotettu" checked>
+          <label for="teema-alaosa-laite">Laitteen mukaan</label>
+
+          <input type="radio" name="teema-alaosa" id="teema-alaosa-vaalea" value="vaalea" class="piilotettu">
+          <label for="teema-alaosa-vaalea">Vaalea</label>
+
+          <input type="radio" name="teema-alaosa" id="teema-alaosa-tumma" value="tumma" class="piilotettu">
+          <label for="teema-alaosa-tumma">Tumma</label>
+        </div>
+      </fieldset>
     </div>
     <p>Tekijä: Robert Färm · Tiedot tarkistettu lokakuussa 2026</p>
   </footer>
