@@ -12,8 +12,8 @@ function lueTila() {
   return JSON.parse(tallennettu);
 }
 
-function tallennaTila(tila) {
-  localStorage.setItem(TALLENNUSAVAIN, JSON.stringify(tila));
+function tallennaTila(tallennettava) {
+  localStorage.setItem(TALLENNUSAVAIN, JSON.stringify(tallennettava));
 }
 
 
