@@ -12,4 +12,8 @@ function asetaTeema(teema) {
   }
 }
 
-asetaTeema(localStorage.getItem(TEEMAAVAIN));
+try {
+  asetaTeema(localStorage.getItem(TEEMAAVAIN));
+} catch (virhe) {
+  console.error('Tallennettua teemaa ei voitu lukea', virhe);
+}

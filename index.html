@@ -50,7 +50,7 @@
       palata sivulle myöhemmin.</p>
     <p class="huomio">Jos avasit sivun Instagramista tai muusta sovelluksesta, avaa se mieluummin "oikeassa" selaimessa
       (kolme pistettä → Avaa selaimessa), jotta merkinnät pysyvät tallessa.</p>
-    <div class="toiminnot">
+      <div class="toiminnot">
       <div class="aloita-alusta-alue">
         <button type="button" class="nappi aloita-alusta" aria-describedby="vihje-ylaosa">Aloita alusta</button>
         <span class="vihje" id="vihje-ylaosa">Tyhjentää kaikki merkinnät ja lomakkeen tiedot</span>
@@ -521,6 +521,19 @@
       <div class="vahvistus-napit">
         <button type="submit" value="peruuta" class="nappi" autofocus>Peruuta</button>
         <button type="submit" value="tyhjenna" class="nappi nappi-vaarallinen">Tyhjennä kaikki</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="vahvistus" id="tallennus-estetty" aria-labelledby="estetty-otsikko" aria-describedby="estetty-teksti">
+    <form method="dialog">
+      <h2 id="estetty-otsikko">Merkinnät eivät tallennu</h2>
+      <p id="estetty-teksti">Selaimesi estää tätä sivua tallentamasta tietoja. Yleensä syy on, että evästeet ja
+        sivuston tiedot on estetty selaimen asetuksista. Voit käyttää apuria, mutta merkinnät ja lomakkeen tiedot
+        katoavat, kun suljet tai päivität sivun.</p>
+      <p>Jos haluat merkintöjen säilyvän, salli evästeet tälle sivulle selaimen asetuksista ja lataa sivu uudelleen.</p>
+      <div class="vahvistus-napit">
+        <button type="submit" class="nappi nappi-ensisijainen" autofocus>Selvä</button>
       </div>
     </form>
   </dialog>

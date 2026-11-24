@@ -3,17 +3,42 @@
 const TALLENNUSAVAIN = 'release-helper-tila';
 
 function lueTila() {
-  const tallennettu = localStorage.getItem(TALLENNUSAVAIN);
+  try {
+    const tallennettu = localStorage.getItem(TALLENNUSAVAIN);
 
-  if (tallennettu === null) {
+    if (tallennettu === null) {
+      return {};
+    }
+
+    const luettu = JSON.parse(tallennettu);
+
+    // Tilan pitää olla tavallinen objekti: null, luku, teksti tai taulukko ei kelpaa
+    if (typeof luettu !== 'object' || luettu === null || Array.isArray(luettu)) {
+      return {};
+    }
+
+    return luettu;
+  } catch (virhe) {
+    console.error('Tallennettua tilaa ei voitu lukea', virhe);
     return {};
   }
-
-  return JSON.parse(tallennettu);
 }
 
+const varoitusDialogi = document.querySelector('#tallennus-estetty');
+let varoitusNaytetty = false;
+
 function tallennaTila(tallennettava) {
-  localStorage.setItem(TALLENNUSAVAIN, JSON.stringify(tallennettava));
+  try {
+    localStorage.setItem(TALLENNUSAVAIN, JSON.stringify(tallennettava));
+  } catch (virhe) {
+    console.error('Tilaa ei voitu tallentaa', virhe);
+
+    // Varoitus vain ensimmäisellä kerralla, ei jokaisella klikkauksella tai näppäilyllä
+    if (!varoitusNaytetty) {
+      varoitusNaytetty = true;
+      varoitusDialogi.showModal();
+    }
+  }
 }
 
 
@@ -323,10 +348,15 @@ teemaNapit.forEach(function (nappi) {
     asetaTeema(valittu);
     naytaValittuTeema(valittu);
 
-    if (valittu === 'laite') {
-      localStorage.removeItem(TEEMAAVAIN);
-    } else {
-      localStorage.setItem(TEEMAAVAIN, valittu);
+    try {
+      if (valittu === 'laite') {
+        localStorage.removeItem(TEEMAAVAIN);
+      } else {
+        localStorage.setItem(TEEMAAVAIN, valittu);
+      }
+    } catch (virhe) {
+      // Teema vaihtuu silti tämän käynnin ajaksi. Dialogi tulee, kun merkintöjä yritetään tallentaa.
+      console.error('Teemaa ei voitu tallentaa', virhe);
     }
   });
 });
